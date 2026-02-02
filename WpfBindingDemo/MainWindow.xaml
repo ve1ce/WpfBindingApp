@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WpfBindingDemo"
         mc:Ignorable="d"
         Title="WPF Binding Demo"
-        Height="450"
+        Height="500
+        "
         Width="800">
 
     <Grid>

@@ -1,0 +1,279 @@
+﻿<UserControl x:Class="WpfBindingDemo.Views.Tabs.TriggersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfBindingDemo.Views.Tabs"
+             mc:Ignorable="d"
+             d:DesignHeight="500"
+             d:DesignWidth="700"
+             Background="White">
+
+    <Grid Margin="10">
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="Triggers Demo"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10" />
+
+                <TextBlock Text="Триггеры позволяют автоматически изменять свойства элементов при определенных условиях."
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,20" />
+
+                <!-- Property Trigger -->
+                <GroupBox Header="1. Property Trigger (запускается при изменении свойства)"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Кнопка меняет цвет при наведении мыши (IsMouseOver) и при нажатии (IsPressed):" />
+
+                        <Button Content="Наведи на меня мышь"
+                                Width="200"
+                                Height="40"
+                                Margin="0,10,0,10">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background"
+                                            Value="LightBlue" />
+                                    <Setter Property="Foreground"
+                                            Value="Black" />
+                                    <Style.Triggers>
+                                        <!-- Trigger при наведении мыши -->
+                                        <Trigger Property="IsMouseOver"
+                                                 Value="True">
+                                            <Setter Property="Background"
+                                                    Value="DarkBlue" />
+                                            <Setter Property="Foreground"
+                                                    Value="White" />
+                                            <Setter Property="FontWeight"
+                                                    Value="Bold" />
+                                        </Trigger>
+
+                                        <!-- Trigger при нажатии -->
+                                        <Trigger Property="IsPressed"
+                                                 Value="True">
+                                            <Setter Property="Background"
+                                                    Value="Red" />
+                                            <Setter Property="Foreground"
+                                                    Value="White" />
+                                            <Setter Property="RenderTransform">
+                                                <Setter.Value>
+                                                    <ScaleTransform ScaleX="0.95"
+                                                                    ScaleY="0.95" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                        <TextBlock Text="Срабатывает при изменении свойства элемента (IsMouseOver, IsPressed)"
+                                   FontStyle="Italic"
+                                   Foreground="Gray" />
+                    </StackPanel>
+                </GroupBox>
+
+                <!-- Data Trigger -->
+                <GroupBox Header="2. Data Trigger (запускается при изменении данных)"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Цвет рамки зависит от значения в TextBox:" />
+
+                        <TextBox x:Name="DataTriggerTextBox"
+                                 Text="Введи 'active' или 'error'"
+                                 Width="200"
+                                 Margin="0,5,0,10" />
+
+                        <Border Width="200"
+                                Height="60"
+                                CornerRadius="5"
+                                HorizontalAlignment="Center">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background"
+                                            Value="LightGray" />
+                                    <Setter Property="BorderBrush"
+                                            Value="Gray" />
+                                    <Setter Property="BorderThickness"
+                                            Value="2" />
+                                    <Style.Triggers>
+                                        <!-- DataTrigger проверяет значение TextBox -->
+                                        <DataTrigger Binding="{Binding Text, ElementName=DataTriggerTextBox}"
+                                                     Value="active">
+                                            <Setter Property="BorderBrush"
+                                                    Value="Green" />
+                                            <Setter Property="BorderThickness"
+                                                    Value="3" />
+                                            <Setter Property="Background"
+                                                    Value="LightGreen" />
+                                        </DataTrigger>
+
+                                        <DataTrigger Binding="{Binding Text, ElementName=DataTriggerTextBox}"
+                                                     Value="error">
+                                            <Setter Property="BorderBrush"
+                                                    Value="Red" />
+                                            <Setter Property="BorderThickness"
+                                                    Value="3" />
+                                            <Setter Property="Background"
+                                                    Value="LightCoral" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <TextBlock Text="Проверка состояния"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" />
+                        </Border>
+
+                        <TextBlock Text="Срабатывает при изменении данных, а не свойств элемента"
+                                   FontStyle="Italic"
+                                   Foreground="Gray"
+                                   Margin="0,10,0,0" />
+                    </StackPanel>
+                </GroupBox>
+
+                <!-- MultiDataTrigger -->
+                <GroupBox Header="3. MultiData Trigger (несколько условий)"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Кнопка активируется только когда оба CheckBox отмечены:" />
+
+                        <CheckBox x:Name="CheckBox1"
+                                  Content="Обязательное условие 1"
+                                  Margin="0,5,0,5" />
+                        <CheckBox x:Name="CheckBox2"
+                                  Content="Обязательное условие 2"
+                                  Margin="0,5,0,10" />
+
+                        <Button Content="Продолжить"
+                                Width="150"
+                                Height="35">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="IsEnabled"
+                                            Value="False" />
+                                    <Setter Property="Background"
+                                            Value="LightGray" />
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding IsChecked, ElementName=CheckBox1}"
+                                                           Value="True" />
+                                                <Condition Binding="{Binding IsChecked, ElementName=CheckBox2}"
+                                                           Value="True" />
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="IsEnabled"
+                                                    Value="True" />
+                                            <Setter Property="Background"
+                                                    Value="LightGreen" />
+                                            <Setter Property="FontWeight"
+                                                    Value="Bold" />
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                        <TextBlock Text="Срабатывает только при выполнении ВСЕХ условий"
+                                   FontStyle="Italic"
+                                   Foreground="Gray" />
+                    </StackPanel>
+                </GroupBox>
+
+                <!-- Event Trigger -->
+                <GroupBox Header="4. Event Trigger (запускается при событии)"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Анимация при нажатии на кнопку:" />
+
+                        <Button Content="Нажми для анимации"
+                                Width="200"
+                                Height="40"
+                                Background="LightBlue"
+                                Margin="0,10,0,10">
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <!-- Простая анимация изменения цвета -->
+                                                <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                                                                To="Green"
+                                                                Duration="0:0:0.5" />
+
+                                                <!-- Возврат к исходному цвету -->
+                                                <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                                                                To="LightBlue"
+                                                                Duration="0:0:0.5"
+                                                                BeginTime="0:0:0.5" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+
+                        <TextBlock Text="Срабатывает при событии (Click, MouseEnter и т.д.), обычно для анимаций"
+                                   FontStyle="Italic"
+                                   Foreground="Gray" />
+                    </StackPanel>
+                </GroupBox>
+
+                <!-- Сравнение триггеров -->
+                <Border BorderBrush="#e3f1fc"
+                        BorderThickness="2"
+                        CornerRadius="5"
+                        Padding="10"
+                        Background="AliceBlue">
+                    <StackPanel>
+                        <TextBlock Text="Сравнение триггеров:"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,5" />
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="PropertyTrigger"
+                                           FontWeight="Bold" />
+                                <TextBlock Text="• Запуск: изменение свойства" />
+                                <TextBlock Text="• Пример: IsMouseOver" />
+                                <TextBlock Text="• Прост в использовании" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="DataTrigger"
+                                           FontWeight="Bold" />
+                                <TextBlock Text="• Запуск: изменение данных" />
+                                <TextBlock Text="• Пример: значение TextBox" />
+                                <TextBlock Text="• Гибкий, зависит от данных" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="MultiDataTrigger"
+                                           FontWeight="Bold" />
+                                <TextBlock Text="• Запуск: несколько условий" />
+                                <TextBlock Text="• Пример: все CheckBox=true" />
+                                <TextBlock Text="• Сложные условия" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="3">
+                                <TextBlock Text="EventTrigger"
+                                           FontWeight="Bold" />
+                                <TextBlock Text="• Запуск: событие" />
+                                <TextBlock Text="• Пример: Click" />
+                                <TextBlock Text="• Для анимаций" />
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
