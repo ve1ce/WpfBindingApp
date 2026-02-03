@@ -2,6 +2,9 @@
 
 namespace WpfBindingDemo.ViewModels
 {
+    /// <summary>
+    /// Привязка по-умолчанию
+    /// </summary>
     public partial class DefaultBindingViewModel : ObservableObject
     {
         [ObservableProperty]

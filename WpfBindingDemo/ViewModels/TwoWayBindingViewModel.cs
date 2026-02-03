@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace WpfBindingDemo.ViewModels
 {
+    /// <summary>
+    /// Двусторонняя привязка
+    /// </summary>
     public partial class TwoWayBindingViewModel : ObservableObject
     {
         [ObservableProperty]

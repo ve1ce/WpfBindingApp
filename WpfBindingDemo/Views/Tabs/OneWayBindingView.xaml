@@ -12,7 +12,7 @@
     <Grid Margin="10">
         <ScrollViewer>
             <StackPanel>
-                <TextBlock Text="OneWay Binding Demo"
+                <TextBlock Text="Односторонняя привязка"
                            FontSize="16"
                            FontWeight="Bold"
                            Margin="0,0,0,10" />
@@ -21,7 +21,6 @@
                            TextWrapping="Wrap"
                            Margin="0,0,0,20" />
 
-                <!-- Пример 1: Прямая привязка к элементу (OneWay по умолчанию) -->
                 <GroupBox Header="1. Прямая OneWay привязка между элементами"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
@@ -39,8 +38,7 @@
                         <TextBlock Text="Значение:"
                                    Margin="0,10,0,5" />
                         <TextBlock Text="{Binding Value, ElementName=SourceSlider, Mode=OneWay}"
-                                   FontWeight="Bold"
-                                   Foreground="Blue" />
+                                   FontWeight="Bold" />
 
                         <TextBlock Text="Изменение слайдера обновляет ProgressBar и TextBlock, но обратно - нет"
                                    FontStyle="Italic"
@@ -49,7 +47,6 @@
                     </StackPanel>
                 </GroupBox>
 
-                <!-- Пример 2: Привязка через ViewModel -->
                 <GroupBox Header="2. OneWay привязка через ViewModel"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
@@ -57,7 +54,6 @@
                         <TextBox Text="{Binding SourceValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Margin="0,5,0,10" />
 
-                        <!-- Разные элементы с OneWay привязкой к одному свойству -->
                         <TextBlock Text="OneWay привязки к одному свойству:" />
 
                         <Border BorderBrush="LightGray"
@@ -66,7 +62,7 @@
                                 Padding="5"
                                 Margin="0,5,0,5">
                             <TextBlock Text="{Binding SourceValue, Mode=OneWay}"
-                                       Background="LightGreen"
+                                       Background="LightYellow"
                                        Padding="3" />
                         </Border>
 
@@ -76,7 +72,7 @@
                                 Padding="5"
                                 Margin="0,5,0,5">
                             <TextBlock Text="{Binding SourceValue, StringFormat='Значение: {0}', Mode=OneWay}"
-                                       Background="LightBlue"
+                                       Background="#b9a3f0"
                                        Padding="3" />
                         </Border>
 
@@ -99,7 +95,6 @@
                     </StackPanel>
                 </GroupBox>
 
-                <!-- Пример 3: OneWay vs Default (для TextBlock) -->
                 <GroupBox Header="3. OneWay vs Default Binding Mode"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
@@ -128,7 +123,7 @@
                                         Margin="10,0,0,0">
                                 <TextBlock Text="Режим по умолчанию:" />
                                 <TextBlock Text="{Binding Text, ElementName=ComparisonSource}"
-                                           Background="LightCoral"
+                                           Background="#b9a3f0"
                                            Padding="5"
                                            Margin="0,5,0,0" />
                             </StackPanel>
@@ -141,7 +136,6 @@
                     </StackPanel>
                 </GroupBox>
 
-                <!-- Пример 4: Вычисляемое свойство -->
                 <GroupBox Header="4. OneWay к вычисляемому свойству"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">

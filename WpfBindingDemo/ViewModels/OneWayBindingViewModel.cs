@@ -2,6 +2,9 @@
 
 namespace WpfBindingDemo.ViewModels
 {
+    /// <summary>
+    /// Односторонняя привязка
+    /// </summary>
     public partial class OneWayBindingViewModel : ObservableObject
     {
         [ObservableProperty]

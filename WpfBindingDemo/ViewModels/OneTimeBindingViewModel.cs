@@ -4,6 +4,9 @@ using System;
 
 namespace WpfBindingDemo.ViewModels
 {
+    /// <summary>
+    /// Одноразовая привязка
+    /// </summary>
     public partial class OneTimeBindingViewModel : ObservableObject
     {
         [ObservableProperty]

@@ -11,7 +11,7 @@
 
     <Grid Margin="10">
         <StackPanel>
-            <TextBlock Text="OneTime Binding Demo"
+            <TextBlock Text="Одноразовая привязка"
                        FontSize="16"
                        FontWeight="Bold"
                        Margin="0,0,0,10" />
@@ -20,7 +20,6 @@
                        TextWrapping="Wrap"
                        Margin="0,0,0,20" />
 
-            <!-- Пример 1: Прямая привязка к элементу -->
             <GroupBox Header="1. Прямая привязка к элементу"
                       Margin="0,0,0,10">
                 <StackPanel Margin="5">
@@ -35,14 +34,13 @@
                                Padding="5"
                                Margin="0,5,0,0" />
 
-                    <TextBlock Text="Попробуй изменить текст в TextBox выше - этот TextBlock не обновится"
+                    <TextBlock Text="Попробуйте изменить текст в TextBox выше - этот TextBlock не обновится"
                                FontStyle="Italic"
                                Foreground="Gray"
                                Margin="0,10,0,0" />
                 </StackPanel>
             </GroupBox>
 
-            <!-- Пример 2: Привязка через ViewModel -->
             <GroupBox Header="2. Привязка через ViewModel"
                       Margin="0,0,0,10">
                 <StackPanel Margin="5">
@@ -52,7 +50,7 @@
 
                     <TextBlock Text="OneTime привязка к тому же свойству:" />
                     <TextBlock Text="{Binding OneTimeValue, Mode=OneTime}"
-                               Background="LightBlue"
+                               Background="LightYellow"
                                Padding="5"
                                Margin="0,5,0,0" />
 
