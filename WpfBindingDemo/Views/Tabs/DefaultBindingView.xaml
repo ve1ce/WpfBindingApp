@@ -12,7 +12,7 @@
     <Grid Margin="10">
         <ScrollViewer>
             <StackPanel>
-                <TextBlock Text="Default Binding Mode"
+                <TextBlock Text="Привязка по-умолчанию"
                            FontSize="16"
                            FontWeight="Bold"
                            Margin="0,0,0,10" />
@@ -21,7 +21,6 @@
                            TextWrapping="Wrap"
                            Margin="0,0,0,20" />
 
-                <!-- Демонстрация: одно свойство, разные элементы -->
                 <GroupBox Header="Демонстрация: одно свойство, разные элементы"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
@@ -36,7 +35,6 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <!-- Левая колонка: элементы OneWay по умолчанию -->
                             <StackPanel Grid.Column="0"
                                         Margin="0,0,10,0">
                                 <TextBlock Text="Элементы OneWay (по умолчанию):"
@@ -44,7 +42,7 @@
 
                                 <TextBlock Text="TextBlock (только чтение):"
                                            Margin="0,10,0,2" />
-                                <Border Background="LightGreen"
+                                <Border Background="LightYellow"
                                         Padding="5">
                                     <TextBlock Text="{Binding DemoValue}" />
                                 </Border>
@@ -59,7 +57,6 @@
                                            FontSize="10" />
                             </StackPanel>
 
-                            <!-- Правая колонка: элементы TwoWay по умолчанию -->
                             <StackPanel Grid.Column="1"
                                         Margin="10,0,0,0">
                                 <TextBlock Text="Элементы TwoWay (по умолчанию):"
@@ -68,7 +65,7 @@
                                 <TextBlock Text="TextBox (редактирование):"
                                            Margin="0,10,0,2" />
                                 <TextBox Text="{Binding DemoValue}"
-                                         Background="LightBlue" />
+                                         Background="#b9a3f0" />
 
                                 <TextBlock Text="Slider:"
                                            Margin="0,10,0,2" />
@@ -87,14 +84,13 @@
                             </StackPanel>
                         </Grid>
 
-                        <TextBlock Text="Попробуй изменить значение в верхнем TextBox и посмотри, как ведут себя разные элементы"
+                        <TextBlock Text="Попробуйте изменить значение в верхнем TextBox и посмотрите, как ведут себя разные элементы"
                                    FontStyle="Italic"
                                    Foreground="Gray"
                                    Margin="0,15,0,0" />
                     </StackPanel>
                 </GroupBox>
 
-                <!-- Сравнение: Default vs Явное указание -->
                 <GroupBox Header="Сравнение: Default Mode vs Явное указание Mode"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
@@ -106,7 +102,6 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <!-- Default (TwoWay для TextBox) -->
                             <StackPanel Grid.Column="0"
                                         Margin="0,0,10,0">
                                 <TextBlock Text="TextBox без указания Mode:"
@@ -120,13 +115,12 @@
                                            FontSize="10" />
                             </StackPanel>
 
-                            <!-- Явное указание OneWay -->
                             <StackPanel Grid.Column="1"
                                         Margin="10,0,0,0">
                                 <TextBlock Text="TextBox с Mode=OneWay:"
                                            FontWeight="Bold" />
                                 <TextBox Text="{Binding TestProperty, Mode=OneWay}"
-                                         Background="LightCoral"
+                                         Background="#b9a3f0"
                                          Height="60"
                                          TextWrapping="Wrap"
                                          Margin="0,5,0,5" />
@@ -142,7 +136,7 @@
                                    Background="LightGray"
                                    Padding="5" />
 
-                        <TextBlock Text="Попробуй изменить текст в каждом TextBox. Первый обновит значение, второй - нет."
+                        <TextBlock Text="Попробуйте изменить текст в каждом TextBox. Первый обновит значение, второй - нет."
                                    FontStyle="Italic"
                                    Foreground="Gray"
                                    Margin="0,10,0,0" />

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfBindingDemo.ViewModels
 {
+    /// <summary>
+    /// Триггеры
+    /// </summary>
     internal class TriggersViewModel
     {
         // Добавил просто чтобы было для полноты картины :)

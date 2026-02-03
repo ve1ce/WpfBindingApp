@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfBindingDemo.ViewModels
 {
+    /// <summary>
+    /// Привязка по-умолчанию
+    /// </summary>
     public class DefaultBindingViewModel : ViewModelBase
     {
         private string _demoValue = "Измени это значение";

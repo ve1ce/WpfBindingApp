@@ -7,6 +7,9 @@ using System;
 
 namespace WpfBindingDemo.ViewModels
 {
+    /// <summary>
+    /// Двусторонняя привязка
+    /// </summary>
     public class TwoWayBindingViewModel : ViewModelBase
     {
         private string _userName = "Иван Иванов";

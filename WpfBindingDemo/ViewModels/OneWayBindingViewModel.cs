@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfBindingDemo.ViewModels
 {
+    /// <summary>
+    /// Односторонняя привязка
+    /// </summary>
     public class OneWayBindingViewModel : ViewModelBase
     {
         private string _sourceValue = "Исходное значение";

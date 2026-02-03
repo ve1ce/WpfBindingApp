@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace WpfBindingDemo.ViewModels
 {
+    /// <summary>
+    /// Одноразовая привязка
+    /// </summary>
     public class OneTimeBindingViewModel : ViewModelBase
     {
         private string _oneTimeValue = "Начальное значение из ViewModel";

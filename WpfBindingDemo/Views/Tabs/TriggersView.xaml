@@ -12,7 +12,7 @@
     <Grid Margin="10">
         <ScrollViewer>
             <StackPanel>
-                <TextBlock Text="Triggers Demo"
+                <TextBlock Text="Триггеры"
                            FontSize="16"
                            FontWeight="Bold"
                            Margin="0,0,0,10" />
@@ -21,7 +21,6 @@
                            TextWrapping="Wrap"
                            Margin="0,0,0,20" />
 
-                <!-- Property Trigger -->
                 <GroupBox Header="1. Property Trigger (запускается при изменении свойства)"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
@@ -38,7 +37,6 @@
                                     <Setter Property="Foreground"
                                             Value="Black" />
                                     <Style.Triggers>
-                                        <!-- Trigger при наведении мыши -->
                                         <Trigger Property="IsMouseOver"
                                                  Value="True">
                                             <Setter Property="Background"
@@ -49,7 +47,6 @@
                                                     Value="Bold" />
                                         </Trigger>
 
-                                        <!-- Trigger при нажатии -->
                                         <Trigger Property="IsPressed"
                                                  Value="True">
                                             <Setter Property="Background"
@@ -74,7 +71,6 @@
                     </StackPanel>
                 </GroupBox>
 
-                <!-- Data Trigger -->
                 <GroupBox Header="2. Data Trigger (запускается при изменении данных)"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
@@ -98,7 +94,6 @@
                                     <Setter Property="BorderThickness"
                                             Value="2" />
                                     <Style.Triggers>
-                                        <!-- DataTrigger проверяет значение TextBox -->
                                         <DataTrigger Binding="{Binding Text, ElementName=DataTriggerTextBox}"
                                                      Value="active">
                                             <Setter Property="BorderBrush"
@@ -133,7 +128,6 @@
                     </StackPanel>
                 </GroupBox>
 
-                <!-- MultiDataTrigger -->
                 <GroupBox Header="3. MultiData Trigger (несколько условий)"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
@@ -181,7 +175,6 @@
                     </StackPanel>
                 </GroupBox>
 
-                <!-- Event Trigger -->
                 <GroupBox Header="4. Event Trigger (запускается при событии)"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
@@ -197,12 +190,10 @@
                                     <EventTrigger.Actions>
                                         <BeginStoryboard>
                                             <Storyboard>
-                                                <!-- Простая анимация изменения цвета -->
                                                 <ColorAnimation Storyboard.TargetProperty="Background.Color"
                                                                 To="Green"
                                                                 Duration="0:0:0.5" />
 
-                                                <!-- Возврат к исходному цвету -->
                                                 <ColorAnimation Storyboard.TargetProperty="Background.Color"
                                                                 To="LightBlue"
                                                                 Duration="0:0:0.5"
@@ -220,7 +211,6 @@
                     </StackPanel>
                 </GroupBox>
 
-                <!-- Сравнение триггеров -->
                 <Border BorderBrush="#e3f1fc"
                         BorderThickness="2"
                         CornerRadius="5"

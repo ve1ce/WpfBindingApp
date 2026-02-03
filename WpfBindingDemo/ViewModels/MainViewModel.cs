@@ -25,35 +25,35 @@ namespace WpfBindingDemo.ViewModels
             var oneTimeView = new OneTimeBindingView();
             oneTimeView.DataContext = oneTimeViewModel;
 
-            Tabs.Add(new TabViewModel("OneTime Binding", oneTimeView));
+            Tabs.Add(new TabViewModel("Одноразовая привязка", oneTimeView));
 
             // Вкладка TwoWay Binding
             var twoWayViewModel = new TwoWayBindingViewModel();
             var twoWayView = new TwoWayBindingView();
             twoWayView.DataContext = twoWayViewModel;
 
-            Tabs.Add(new TabViewModel("TwoWay Binding", twoWayView));
+            Tabs.Add(new TabViewModel("Двусторонняя привязка", twoWayView));
 
             // Вкладка OneWay Binding
             var oneWayViewModel = new OneWayBindingViewModel();
             var oneWayView = new OneWayBindingView();
             oneWayView.DataContext = oneWayViewModel;
 
-            Tabs.Add(new TabViewModel("OneWay Binding", oneWayView));
+            Tabs.Add(new TabViewModel("Односторонняя привязка", oneWayView));
 
             // Вкладка Default Binding
             var defaultViewModel = new DefaultBindingViewModel();
             var defaultView = new DefaultBindingView();
             defaultView.DataContext = defaultViewModel;
 
-            Tabs.Add(new TabViewModel("Default Binding", defaultView));
+            Tabs.Add(new TabViewModel("Привязка по-умолчанию", defaultView));
 
             // Вкладка Triggers
             var triggersViewModel = new TriggersViewModel();
             var triggersView = new TriggersView();
             triggersView.DataContext = triggersViewModel;
 
-            Tabs.Add(new TabViewModel("Triggers", triggersView));
+            Tabs.Add(new TabViewModel("Триггеры", triggersView));
         }
     }
 }
