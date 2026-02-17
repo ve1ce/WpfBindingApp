@@ -55,6 +55,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\DefaultBindingViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\OneTimeBindingViewModel.cs" />
+    <Compile Include="ViewModels\OneWayBindingViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\TabViewModel.cs" />
+    <Compile Include="ViewModels\TriggersViewModel.cs" />
+    <Compile Include="ViewModels\TwoWayBindingViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\Tabs\DefaultBindingView.xaml.cs">
+      <DependentUpon>DefaultBindingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tabs\OneTimeBindingView.xaml.cs">
+      <DependentUpon>OneTimeBindingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tabs\OneWayBindingView.xaml.cs">
+      <DependentUpon>OneWayBindingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tabs\TriggersView.xaml.cs">
+      <DependentUpon>TriggersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tabs\TwoWayBindingView.xaml.cs">
+      <DependentUpon>TwoWayBindingView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +91,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Tabs\DefaultBindingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tabs\OneTimeBindingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tabs\OneWayBindingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tabs\TriggersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tabs\TwoWayBindingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

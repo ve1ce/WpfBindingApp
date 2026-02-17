@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="WpfBindingDemo.Views.Tabs.DefaultBindingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfBindingDemo.Views.Tabs"
+             mc:Ignorable="d"
+             d:DesignHeight="400"
+             d:DesignWidth="600"
+             Background="White">
+
+    <Grid Margin="10">
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="Привязка по-умолчанию"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10" />
+
+                <TextBlock Text="Каждый элемент WPF имеет режим привязки по умолчанию. Если не указать Mode явно, используется этот режим."
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,20" />
+
+                <GroupBox Header="Демонстрация: одно свойство, разные элементы"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Исходное значение (можно менять):" />
+                        <TextBox Text="{Binding DemoValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 FontWeight="Bold"
+                                 Margin="0,5,0,10" />
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0"
+                                        Margin="0,0,10,0">
+                                <TextBlock Text="Элементы OneWay (по умолчанию):"
+                                           FontWeight="Bold" />
+
+                                <TextBlock Text="TextBlock (только чтение):"
+                                           Margin="0,10,0,2" />
+                                <Border Background="LightYellow"
+                                        Padding="5">
+                                    <TextBlock Text="{Binding DemoValue}" />
+                                </Border>
+
+                                <TextBlock Text="ProgressBar:"
+                                           Margin="0,10,0,2" />
+                                <ProgressBar Value="{Binding NumericValue}"
+                                             Maximum="100"
+                                             Height="20" />
+                                <TextBlock Text="{Binding NumericValue, StringFormat='Значение: {0}'}"
+                                           HorizontalAlignment="Center"
+                                           FontSize="10" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1"
+                                        Margin="10,0,0,0">
+                                <TextBlock Text="Элементы TwoWay (по умолчанию):"
+                                           FontWeight="Bold" />
+
+                                <TextBlock Text="TextBox (редактирование):"
+                                           Margin="0,10,0,2" />
+                                <TextBox Text="{Binding DemoValue}"
+                                         Background="#b9a3f0" />
+
+                                <TextBlock Text="Slider:"
+                                           Margin="0,10,0,2" />
+                                <Slider Value="{Binding NumericValue}"
+                                        Minimum="0"
+                                        Maximum="100" />
+                                <TextBox Text="{Binding NumericValue, StringFormat=\{0:F1\}}"
+                                         HorizontalAlignment="Center"
+                                         Width="50" />
+
+                                <TextBlock Text="CheckBox:"
+                                           Margin="0,10,0,2" />
+                                <CheckBox Content="Состояние"
+                                          IsChecked="{Binding IsChecked}"
+                                          HorizontalAlignment="Left" />
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock Text="Попробуйте изменить значение в верхнем TextBox и посмотрите, как ведут себя разные элементы"
+                                   FontStyle="Italic"
+                                   Foreground="Gray"
+                                   Margin="0,15,0,0" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Сравнение: Default Mode vs Явное указание Mode"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Два одинаковых TextBox с разными привязками:" />
+
+                        <Grid Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0"
+                                        Margin="0,0,10,0">
+                                <TextBlock Text="TextBox без указания Mode:"
+                                           FontWeight="Bold" />
+                                <TextBox Text="{Binding TestProperty}"
+                                         Background="LightYellow"
+                                         Height="60"
+                                         TextWrapping="Wrap"
+                                         Margin="0,5,0,5" />
+                                <TextBlock Text="Используется TwoWay (по умолчанию для TextBox)"
+                                           FontSize="10" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1"
+                                        Margin="10,0,0,0">
+                                <TextBlock Text="TextBox с Mode=OneWay:"
+                                           FontWeight="Bold" />
+                                <TextBox Text="{Binding TestProperty, Mode=OneWay}"
+                                         Background="#b9a3f0"
+                                         Height="60"
+                                         TextWrapping="Wrap"
+                                         Margin="0,5,0,5" />
+                                <TextBlock Text="Явно указан OneWay, игнорирует default"
+                                           FontSize="10" />
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock Text="Значение:"
+                                   Margin="0,10,0,5" />
+                        <TextBlock Text="{Binding TestProperty}"
+                                   FontWeight="Bold"
+                                   Background="LightGray"
+                                   Padding="5" />
+
+                        <TextBlock Text="Попробуйте изменить текст в каждом TextBox. Первый обновит значение, второй - нет."
+                                   FontStyle="Italic"
+                                   Foreground="Gray"
+                                   Margin="0,10,0,0" />
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
