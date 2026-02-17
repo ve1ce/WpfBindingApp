@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfBindingDemo.ViewModels;
 
-namespace WpfBindingDemo
+namespace WpfBindingDemo.Views.Tabs
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для OneWayBindingView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OneWayBindingView : UserControl
     {
-        public MainWindow()
+        public OneWayBindingView()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
         }
     }
 }
