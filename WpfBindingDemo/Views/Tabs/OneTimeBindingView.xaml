@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:WpfBindingDemo.Views.Tabs"
+             xmlns:local="clr-namespace:WpfBindingDemo"
              mc:Ignorable="d"
              d:DesignHeight="300"
              d:DesignWidth="400"
@@ -11,55 +11,55 @@
 
     <Grid Margin="10">
         <StackPanel>
-            <TextBlock Text="Одноразовая привязка"
+            <TextBlock Text="{local:Loc OneTime_Title}"
                        FontSize="16"
                        FontWeight="Bold"
                        Margin="0,0,0,10" />
 
-            <TextBlock Text="Привязка OneTime устанавливается только один раз при инициализации и не обновляется при изменении источника."
+            <TextBlock Text="{local:Loc OneTime_Description}"
                        TextWrapping="Wrap"
                        Margin="0,0,0,20" />
 
-            <GroupBox Header="1. Прямая привязка к элементу"
+            <GroupBox Header="{local:Loc OneTime_Group1}"
                       Margin="0,0,0,10">
                 <StackPanel Margin="5">
-                    <TextBlock Text="Исходное значение:" />
+                    <TextBlock Text="{local:Loc OneTime_Label_OriginalValue}" />
                     <TextBox x:Name="SourceTextBox"
-                             Text="Начальное значение"
+                             Text="{local:Loc SourceTextBox_DefaultText}"
                              Margin="0,5,0,5" />
 
-                    <TextBlock Text="OneTime привязка к TextBox выше:" />
+                    <TextBlock Text="{local:Loc OneTime_Label_OneTimeBinding}" />
                     <TextBlock Text="{Binding Text, ElementName=SourceTextBox, Mode=OneTime}"
                                Background="LightYellow"
                                Padding="5"
                                Margin="0,5,0,0" />
 
-                    <TextBlock Text="Попробуйте изменить текст в TextBox выше - этот TextBlock не обновится"
+                    <TextBlock Text="{local:Loc OneTime_Hint_ChangeText}"
                                FontStyle="Italic"
                                Foreground="Gray"
                                Margin="0,10,0,0" />
                 </StackPanel>
             </GroupBox>
 
-            <GroupBox Header="2. Привязка через ViewModel"
+            <GroupBox Header="{local:Loc OneTime_Group2}"
                       Margin="0,0,0,10">
                 <StackPanel Margin="5">
-                    <TextBlock Text="Значение из ViewModel:" />
+                    <TextBlock Text="{local:Loc OneTime_Label_ValueFromVM}" />
                     <TextBox Text="{Binding OneTimeValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Margin="0,5,0,5" />
 
-                    <TextBlock Text="OneTime привязка к тому же свойству:" />
+                    <TextBlock Text="{local:Loc OneTime_Label_OneTimeToVM}" />
                     <TextBlock Text="{Binding OneTimeValue, Mode=OneTime}"
                                Background="LightYellow"
                                Padding="5"
                                Margin="0,5,0,0" />
 
-                    <Button Content="Обновить свойство вручную"
+                    <Button Content="{local:Loc OneTime_Button_Update}"
                             Command="{Binding UpdateOneTimeValueCommand}"
                             Margin="0,10,0,0"
                             Padding="5" />
 
-                    <TextBlock Text="OneTime привязка НЕ обновится даже при изменении свойства в ViewModel"
+                    <TextBlock Text="{local:Loc OneTime_Hint_NoUpdate}"
                                FontStyle="Italic"
                                Foreground="Gray"
                                Margin="0,10,0,0" />

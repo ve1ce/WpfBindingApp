@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfBindingDemo;
 
 namespace WpfBindingDemo.ViewModels
 {
@@ -11,7 +12,7 @@ namespace WpfBindingDemo.ViewModels
     /// </summary>
     public class OneWayBindingViewModel : ViewModelBase
     {
-        private string _sourceValue = "Исходное значение";
+        private string _sourceValue = Localization.GetString("OneWay_Source_DefaultValue");
         private double _numberA = 10;
         private double _numberB = 5;
 

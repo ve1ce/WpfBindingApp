@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Language_Label" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>WPF Binding Demo</value>
+  </data>
+  <data name="OneTime_Button_Update" xml:space="preserve">
+    <value>Update property manually</value>
+  </data>
+  <data name="OneTime_Description" xml:space="preserve">
+    <value>OneTime binding is set only once during initialization and does not update when the source changes.</value>
+  </data>
+  <data name="OneTime_Group1" xml:space="preserve">
+    <value>1. Direct element binding</value>
+  </data>
+  <data name="OneTime_Group2" xml:space="preserve">
+    <value>2. ViewModel binding</value>
+  </data>
+  <data name="OneTime_Hint_ChangeText" xml:space="preserve">
+    <value>Try changing the text in the TextBox above - this TextBlock won't update</value>
+  </data>
+  <data name="OneTime_Hint_NoUpdate" xml:space="preserve">
+    <value>OneTime binding will NOT update even when ViewModel property changes</value>
+  </data>
+  <data name="OneTime_Label_OneTimeBinding" xml:space="preserve">
+    <value>OneTime binding to TextBox above:</value>
+  </data>
+  <data name="OneTime_Label_OneTimeToVM" xml:space="preserve">
+    <value>OneTime binding to the same property:</value>
+  </data>
+  <data name="OneTime_Label_OriginalValue" xml:space="preserve">
+    <value>Original value:</value>
+  </data>
+  <data name="OneTime_Label_ValueFromVM" xml:space="preserve">
+    <value>Value from ViewModel:</value>
+  </data>
+  <data name="OneTime_Title" xml:space="preserve">
+    <value>OneTime Binding</value>
+  </data>
+  <data name="SourceTextBox_DefaultText" xml:space="preserve">
+    <value>Initial value</value>
+  </data>
+  <data name="Tab_OneTimeBinding" xml:space="preserve">
+    <value>OneTime Binding</value>
+  </data>
+  <data name="Tab_TwoWayBinding" xml:space="preserve">
+    <value>TwoWay Binding</value>
+  </data>
+  <data name="Tab_OneWayBinding" xml:space="preserve">
+    <value>OneWay Binding</value>
+  </data>
+  <data name="Tab_DefaultBinding" xml:space="preserve">
+    <value>Default Binding</value>
+  </data>
+  <data name="Tab_Triggers" xml:space="preserve">
+    <value>Triggers</value>
+  </data>
+  <data name="TwoWay_Title" xml:space="preserve">
+    <value>TwoWay Binding</value>
+  </data>
+  <data name="TwoWay_Description" xml:space="preserve">
+    <value>TwoWay binding updates both the source and the target when changes happen in either direction.</value>
+  </data>
+  <data name="TwoWay_Group1" xml:space="preserve">
+    <value>1. Direct TwoWay binding between elements</value>
+  </data>
+  <data name="TwoWay_Group1_SliderText" xml:space="preserve">
+    <value>Slider and TextBox are connected with TwoWay binding:</value>
+  </data>
+  <data name="TwoWay_Group1_Hint" xml:space="preserve">
+    <value>Changing the slider updates the TextBox and vice versa</value>
+  </data>
+  <data name="TwoWay_Group2" xml:space="preserve">
+    <value>2. TwoWay binding via ViewModel</value>
+  </data>
+  <data name="TwoWay_VM_Intro" xml:space="preserve">
+    <value>All elements are bound to a single ViewModel property:</value>
+  </data>
+  <data name="TwoWay_VM_UserNameLabel" xml:space="preserve">
+    <value>User name:</value>
+  </data>
+  <data name="TwoWay_VM_AgeLabel" xml:space="preserve">
+    <value>Age:</value>
+  </data>
+  <data name="TwoWay_VM_IsActiveLabel" xml:space="preserve">
+    <value>Active:</value>
+  </data>
+  <data name="TwoWay_VM_IsActiveContent" xml:space="preserve">
+    <value>User is active</value>
+  </data>
+  <data name="TwoWay_VM_ActiveStatusLabel" xml:space="preserve">
+    <value>Active status: </value>
+  </data>
+  <data name="TwoWay_Age_Prefix" xml:space="preserve">
+    <value>Age: </value>
+  </data>
+  <data name="TwoWay_Group3" xml:space="preserve">
+    <value>3. Difference between UpdateSourceTrigger values</value>
+  </data>
+  <data name="TwoWay_UpdateSourceTrigger_Title1" xml:space="preserve">
+    <value>PropertyChanged (update on every change):</value>
+  </data>
+  <data name="TwoWay_UpdateSourceTrigger_Title2" xml:space="preserve">
+    <value>LostFocus (update when losing focus):</value>
+  </data>
+  <data name="TwoWay_UpdateSourceTrigger_Title3" xml:space="preserve">
+    <value>Explicit (update only when UpdateSource is called):</value>
+  </data>
+  <data name="TwoWay_UpdateSourceTrigger_Button" xml:space="preserve">
+    <value>Update source</value>
+  </data>
+  <data name="TwoWay_Summary_Title" xml:space="preserve">
+    <value>Current values in ViewModel:</value>
+  </data>
+  <data name="OneWay_Title" xml:space="preserve">
+    <value>OneWay Binding</value>
+  </data>
+  <data name="OneWay_Description" xml:space="preserve">
+    <value>OneWay binding updates the target when the source changes, but changes in the target do NOT affect the source.</value>
+  </data>
+  <data name="OneWay_Group1" xml:space="preserve">
+    <value>1. Direct OneWay binding between elements</value>
+  </data>
+  <data name="OneWay_Group1_SliderText" xml:space="preserve">
+    <value>Slider → ProgressBar (OneWay):</value>
+  </data>
+  <data name="OneWay_Group1_ValueLabel" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="OneWay_Group1_Hint" xml:space="preserve">
+    <value>Changing the slider updates the ProgressBar and TextBlock, but not the other way around</value>
+  </data>
+  <data name="OneWay_Group2" xml:space="preserve">
+    <value>2. OneWay binding via ViewModel</value>
+  </data>
+  <data name="OneWay_Source_Label" xml:space="preserve">
+    <value>Data source (can be changed):</value>
+  </data>
+  <data name="OneWay_OneWayBindings_Label" xml:space="preserve">
+    <value>OneWay bindings to the same property:</value>
+  </data>
+  <data name="OneWay_Format_Prefix" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="OneWay_Length_Label" xml:space="preserve">
+    <value>Length:</value>
+  </data>
+  <data name="OneWay_Length_Suffix" xml:space="preserve">
+    <value>characters</value>
+  </data>
+  <data name="OneWay_Group2_Hint" xml:space="preserve">
+    <value>All elements are updated when the TextBox changes, but cannot change it</value>
+  </data>
+  <data name="OneWay_Group3" xml:space="preserve">
+    <value>3. OneWay vs Default Binding Mode</value>
+  </data>
+  <data name="OneWay_Group3_DefaultMode_Title" xml:space="preserve">
+    <value>For TextBlock Mode=OneWay is the default:</value>
+  </data>
+  <data name="OneWay_Group3_ExplicitOneWay" xml:space="preserve">
+    <value>OneWay specified explicitly:</value>
+  </data>
+  <data name="OneWay_Group3_DefaultMode_Label" xml:space="preserve">
+    <value>Default mode:</value>
+  </data>
+  <data name="OneWay_Group3_SameBehavior" xml:space="preserve">
+    <value>Both behave the same, because OneWay is the default for TextBlock</value>
+  </data>
+  <data name="OneWay_Group4" xml:space="preserve">
+    <value>4. OneWay binding to a calculated property</value>
+  </data>
+  <data name="OneWay_Group4_TwoNumbers" xml:space="preserve">
+    <value>Two numbers (TwoWay binding):</value>
+  </data>
+  <data name="OneWay_NumberA_Label" xml:space="preserve">
+    <value>Number A:</value>
+  </data>
+  <data name="OneWay_NumberB_Label" xml:space="preserve">
+    <value>Number B:</value>
+  </data>
+  <data name="OneWay_Computed_Label" xml:space="preserve">
+    <value>Calculated properties (OneWay, read-only):</value>
+  </data>
+  <data name="OneWay_Sum_Label" xml:space="preserve">
+    <value>Sum:</value>
+  </data>
+  <data name="OneWay_Difference_Label" xml:space="preserve">
+    <value>Difference:</value>
+  </data>
+  <data name="OneWay_Product_Label" xml:space="preserve">
+    <value>Product:</value>
+  </data>
+  <data name="Default_Title" xml:space="preserve">
+    <value>Default Binding</value>
+  </data>
+  <data name="Default_Description" xml:space="preserve">
+    <value>Every WPF element has a default binding mode. If Mode is not specified explicitly, this default is used.</value>
+  </data>
+  <data name="Default_Group1_Title" xml:space="preserve">
+    <value>Demo: one property, different elements</value>
+  </data>
+  <data name="Default_Source_Label" xml:space="preserve">
+    <value>Initial value (can be changed):</value>
+  </data>
+  <data name="Default_OneWayElements_Title" xml:space="preserve">
+    <value>OneWay elements (by default):</value>
+  </data>
+  <data name="Default_TextBlock_Label" xml:space="preserve">
+    <value>TextBlock (read-only):</value>
+  </data>
+  <data name="Default_ProgressBar_Label" xml:space="preserve">
+    <value>ProgressBar:</value>
+  </data>
+  <data name="Default_ProgressBar_ValueFormat" xml:space="preserve">
+    <value>Value: {0}</value>
+  </data>
+  <data name="Default_TwoWayElements_Title" xml:space="preserve">
+    <value>TwoWay elements (by default):</value>
+  </data>
+  <data name="Default_TextBox_Label" xml:space="preserve">
+    <value>TextBox (editing):</value>
+  </data>
+  <data name="Default_Slider_Label" xml:space="preserve">
+    <value>Slider:</value>
+  </data>
+  <data name="Default_CheckBox_Label" xml:space="preserve">
+    <value>CheckBox:</value>
+  </data>
+  <data name="Default_CheckBox_Content" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Default_Group1_Hint" xml:space="preserve">
+    <value>Try changing the value in the top TextBox and see how different elements behave</value>
+  </data>
+  <data name="Default_Group2_Title" xml:space="preserve">
+    <value>Comparison: Default Mode vs explicit Mode</value>
+  </data>
+  <data name="Default_Group2_Intro" xml:space="preserve">
+    <value>Two similar TextBoxes with different bindings:</value>
+  </data>
+  <data name="Default_TextBox_NoMode_Title" xml:space="preserve">
+    <value>TextBox without Mode specified:</value>
+  </data>
+  <data name="Default_TextBox_NoMode_Hint" xml:space="preserve">
+    <value>Uses TwoWay (default for TextBox)</value>
+  </data>
+  <data name="Default_TextBox_OneWay_Title" xml:space="preserve">
+    <value>TextBox with Mode=OneWay:</value>
+  </data>
+  <data name="Default_TextBox_OneWay_Hint" xml:space="preserve">
+    <value>OneWay is specified explicitly, overriding default</value>
+  </data>
+  <data name="Default_Value_Label" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="Default_Group2_Hint" xml:space="preserve">
+    <value>Try changing the text in each TextBox. The first one will update the value, the second will not.</value>
+  </data>
+  <data name="Triggers_Title" xml:space="preserve">
+    <value>Triggers</value>
+  </data>
+  <data name="Triggers_Description" xml:space="preserve">
+    <value>Triggers allow you to automatically change element properties when certain conditions are met.</value>
+  </data>
+  <data name="Triggers_Group1_Title" xml:space="preserve">
+    <value>1. Property Trigger (fires on property change)</value>
+  </data>
+  <data name="Triggers_Group1_Intro" xml:space="preserve">
+    <value>The button changes color when the mouse is over it (IsMouseOver) and when it is pressed (IsPressed):</value>
+  </data>
+  <data name="Triggers_Group1_Button" xml:space="preserve">
+    <value>Hover the mouse over me</value>
+  </data>
+  <data name="Triggers_Group1_Hint" xml:space="preserve">
+    <value>Fires when an element property changes (IsMouseOver, IsPressed)</value>
+  </data>
+  <data name="Triggers_Group2_Title" xml:space="preserve">
+    <value>2. Data Trigger (fires when data changes)</value>
+  </data>
+  <data name="Triggers_Group2_Intro" xml:space="preserve">
+    <value>Border color depends on the value in the TextBox:</value>
+  </data>
+  <data name="Triggers_Group2_TextBox_Placeholder" xml:space="preserve">
+    <value>Enter 'active' or 'error'</value>
+  </data>
+  <data name="Triggers_Group2_BorderText" xml:space="preserve">
+    <value>Status check</value>
+  </data>
+  <data name="Triggers_Group2_Hint" xml:space="preserve">
+    <value>Fires when data changes, not when element properties change</value>
+  </data>
+  <data name="Triggers_Group3_Title" xml:space="preserve">
+    <value>3. MultiData Trigger (multiple conditions)</value>
+  </data>
+  <data name="Triggers_Group3_Intro" xml:space="preserve">
+    <value>The button is enabled only when both CheckBoxes are checked:</value>
+  </data>
+  <data name="Triggers_Group3_Check1" xml:space="preserve">
+    <value>Required condition 1</value>
+  </data>
+  <data name="Triggers_Group3_Check2" xml:space="preserve">
+    <value>Required condition 2</value>
+  </data>
+  <data name="Triggers_Group3_Button" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="Triggers_Group3_Hint" xml:space="preserve">
+    <value>Fires only when ALL conditions are met</value>
+  </data>
+  <data name="Triggers_Group4_Title" xml:space="preserve">
+    <value>4. Event Trigger (fires on event)</value>
+  </data>
+  <data name="Triggers_Group4_Intro" xml:space="preserve">
+    <value>Animation when the button is clicked:</value>
+  </data>
+  <data name="Triggers_Group4_Button" xml:space="preserve">
+    <value>Click for animation</value>
+  </data>
+  <data name="Triggers_Group4_Hint" xml:space="preserve">
+    <value>Fires on events (Click, MouseEnter, etc.), usually for animations</value>
+  </data>
+  <data name="Triggers_Comparison_Title" xml:space="preserve">
+    <value>Triggers comparison:</value>
+  </data>
+  <data name="Triggers_Comparison_PropertyTrigger_Title" xml:space="preserve">
+    <value>PropertyTrigger</value>
+  </data>
+  <data name="Triggers_Comparison_PropertyTrigger_Line1" xml:space="preserve">
+    <value>• Fires on property change</value>
+  </data>
+  <data name="Triggers_Comparison_PropertyTrigger_Line2" xml:space="preserve">
+    <value>• Example: IsMouseOver</value>
+  </data>
+  <data name="Triggers_Comparison_PropertyTrigger_Line3" xml:space="preserve">
+    <value>• Simple to use</value>
+  </data>
+  <data name="Triggers_Comparison_DataTrigger_Title" xml:space="preserve">
+    <value>DataTrigger</value>
+  </data>
+  <data name="Triggers_Comparison_DataTrigger_Line1" xml:space="preserve">
+    <value>• Fires on data change</value>
+  </data>
+  <data name="Triggers_Comparison_DataTrigger_Line2" xml:space="preserve">
+    <value>• Example: TextBox value</value>
+  </data>
+  <data name="Triggers_Comparison_DataTrigger_Line3" xml:space="preserve">
+    <value>• Flexible, depends on data</value>
+  </data>
+  <data name="Triggers_Comparison_MultiDataTrigger_Title" xml:space="preserve">
+    <value>MultiDataTrigger</value>
+  </data>
+  <data name="Triggers_Comparison_MultiDataTrigger_Line1" xml:space="preserve">
+    <value>• Fires when multiple conditions are met</value>
+  </data>
+  <data name="Triggers_Comparison_MultiDataTrigger_Line2" xml:space="preserve">
+    <value>• Example: all CheckBox=true</value>
+  </data>
+  <data name="Triggers_Comparison_MultiDataTrigger_Line3" xml:space="preserve">
+    <value>• For complex conditions</value>
+  </data>
+  <data name="Triggers_Comparison_EventTrigger_Title" xml:space="preserve">
+    <value>EventTrigger</value>
+  </data>
+  <data name="Triggers_Comparison_EventTrigger_Line1" xml:space="preserve">
+    <value>• Fires on event</value>
+  </data>
+  <data name="Triggers_Comparison_EventTrigger_Line2" xml:space="preserve">
+    <value>• Example: Click</value>
+  </data>
+  <data name="Triggers_Comparison_EventTrigger_Line3" xml:space="preserve">
+    <value>• For animations</value>
+  </data>
+  <data name="OneWay_ComparisonSource_DefaultText" xml:space="preserve">
+    <value>Sample text</value>
+  </data>
+  <data name="TwoWay_UserName_Default" xml:space="preserve">
+    <value>John Smith</value>
+  </data>
+  <data name="TwoWay_CurrentValues_Format" xml:space="preserve">
+    <value>Name: {0}, Age: {1}, Active: {2}</value>
+  </data>
+  <data name="TwoWay_Active_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="TwoWay_Active_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="OneWay_Source_DefaultValue" xml:space="preserve">
+    <value>Initial value</value>
+  </data>
+  <data name="OneTime_InitialValueFromViewModel" xml:space="preserve">
+    <value>Initial value from ViewModel</value>
+  </data>
+  <data name="OneTime_NewValue_Format" xml:space="preserve">
+    <value>New value: {0}</value>
+  </data>
+  <data name="Default_DemoValue_Initial" xml:space="preserve">
+    <value>Change this value</value>
+  </data>
+  <data name="Default_TestProperty_Initial" xml:space="preserve">
+    <value>Sample text</value>
+  </data>
+  <data name="OneWay_Format_Value" xml:space="preserve">
+    <value>Value: {0}</value>
+  </data>
+</root>

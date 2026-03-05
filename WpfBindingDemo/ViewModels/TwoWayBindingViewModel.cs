@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
+using WpfBindingDemo;
 
 namespace WpfBindingDemo.ViewModels
 {
@@ -12,7 +12,7 @@ namespace WpfBindingDemo.ViewModels
     /// </summary>
     public class TwoWayBindingViewModel : ViewModelBase
     {
-        private string _userName = "Иван Иванов";
+        private string _userName = Localization.GetString("TwoWay_UserName_Default");
         private int _age = 25;
         private bool _isActive = true;
 
@@ -52,7 +52,16 @@ namespace WpfBindingDemo.ViewModels
             }
         }
 
-        public string CurrentValues =>
-            $"Имя: {UserName}, Возраст: {Age}, Активен: {(IsActive ? "Да" : "Нет")}";
+        public string CurrentValues
+        {
+            get
+            {
+                var yes = Localization.GetString("TwoWay_Active_Yes");
+                var no = Localization.GetString("TwoWay_Active_No");
+                var format = Localization.GetString("TwoWay_CurrentValues_Format");
+                var activeText = IsActive ? yes : no;
+                return string.Format(format, UserName, Age, activeText);
+            }
+        }
     }
 }

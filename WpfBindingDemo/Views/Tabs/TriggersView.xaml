@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="WpfBindingDemo.Views.Tabs.TriggersView"
+<UserControl x:Class="WpfBindingDemo.Views.Tabs.TriggersView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:WpfBindingDemo.Views.Tabs"
+             xmlns:local="clr-namespace:WpfBindingDemo"
              mc:Ignorable="d"
              d:DesignHeight="500"
              d:DesignWidth="700"
@@ -12,21 +12,21 @@
     <Grid Margin="10">
         <ScrollViewer>
             <StackPanel>
-                <TextBlock Text="Триггеры"
+                <TextBlock Text="{local:Loc Triggers_Title}"
                            FontSize="16"
                            FontWeight="Bold"
                            Margin="0,0,0,10" />
 
-                <TextBlock Text="Триггеры позволяют автоматически изменять свойства элементов при определенных условиях."
+                <TextBlock Text="{local:Loc Triggers_Description}"
                            TextWrapping="Wrap"
                            Margin="0,0,0,20" />
 
-                <GroupBox Header="1. Property Trigger (запускается при изменении свойства)"
+                <GroupBox Header="{local:Loc Triggers_Group1_Title}"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
-                        <TextBlock Text="Кнопка меняет цвет при наведении мыши (IsMouseOver) и при нажатии (IsPressed):" />
+                        <TextBlock Text="{local:Loc Triggers_Group1_Intro}" />
 
-                        <Button Content="Наведи на меня мышь"
+                        <Button Content="{local:Loc Triggers_Group1_Button}"
                                 Width="200"
                                 Height="40"
                                 Margin="0,10,0,10">
@@ -65,19 +65,19 @@
                             </Button.Style>
                         </Button>
 
-                        <TextBlock Text="Срабатывает при изменении свойства элемента (IsMouseOver, IsPressed)"
+                        <TextBlock Text="{local:Loc Triggers_Group1_Hint}"
                                    FontStyle="Italic"
                                    Foreground="Gray" />
                     </StackPanel>
                 </GroupBox>
 
-                <GroupBox Header="2. Data Trigger (запускается при изменении данных)"
+                <GroupBox Header="{local:Loc Triggers_Group2_Title}"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
-                        <TextBlock Text="Цвет рамки зависит от значения в TextBox:" />
+                        <TextBlock Text="{local:Loc Triggers_Group2_Intro}" />
 
                         <TextBox x:Name="DataTriggerTextBox"
-                                 Text="Введи 'active' или 'error'"
+                                 Text="{local:Loc Triggers_Group2_TextBox_Placeholder}"
                                  Width="200"
                                  Margin="0,5,0,10" />
 
@@ -116,31 +116,31 @@
                                     </Style.Triggers>
                                 </Style>
                             </Border.Style>
-                            <TextBlock Text="Проверка состояния"
+                            <TextBlock Text="{local:Loc Triggers_Group2_BorderText}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
                         </Border>
 
-                        <TextBlock Text="Срабатывает при изменении данных, а не свойств элемента"
+                        <TextBlock Text="{local:Loc Triggers_Group2_Hint}"
                                    FontStyle="Italic"
                                    Foreground="Gray"
                                    Margin="0,10,0,0" />
                     </StackPanel>
                 </GroupBox>
 
-                <GroupBox Header="3. MultiData Trigger (несколько условий)"
+                <GroupBox Header="{local:Loc Triggers_Group3_Title}"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
-                        <TextBlock Text="Кнопка активируется только когда оба CheckBox отмечены:" />
+                        <TextBlock Text="{local:Loc Triggers_Group3_Intro}" />
 
                         <CheckBox x:Name="CheckBox1"
-                                  Content="Обязательное условие 1"
+                                  Content="{local:Loc Triggers_Group3_Check1}"
                                   Margin="0,5,0,5" />
                         <CheckBox x:Name="CheckBox2"
-                                  Content="Обязательное условие 2"
+                                  Content="{local:Loc Triggers_Group3_Check2}"
                                   Margin="0,5,0,10" />
 
-                        <Button Content="Продолжить"
+                        <Button Content="{local:Loc Triggers_Group3_Button}"
                                 Width="150"
                                 Height="35">
                             <Button.Style>
@@ -169,18 +169,18 @@
                             </Button.Style>
                         </Button>
 
-                        <TextBlock Text="Срабатывает только при выполнении ВСЕХ условий"
+                        <TextBlock Text="{local:Loc Triggers_Group3_Hint}"
                                    FontStyle="Italic"
                                    Foreground="Gray" />
                     </StackPanel>
                 </GroupBox>
 
-                <GroupBox Header="4. Event Trigger (запускается при событии)"
+                <GroupBox Header="{local:Loc Triggers_Group4_Title}"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
-                        <TextBlock Text="Анимация при нажатии на кнопку:" />
+                        <TextBlock Text="{local:Loc Triggers_Group4_Intro}" />
 
-                        <Button Content="Нажми для анимации"
+                        <Button Content="{local:Loc Triggers_Group4_Button}"
                                 Width="200"
                                 Height="40"
                                 Background="LightBlue"
@@ -205,7 +205,7 @@
                             </Button.Triggers>
                         </Button>
 
-                        <TextBlock Text="Срабатывает при событии (Click, MouseEnter и т.д.), обычно для анимаций"
+                        <TextBlock Text="{local:Loc Triggers_Group4_Hint}"
                                    FontStyle="Italic"
                                    Foreground="Gray" />
                     </StackPanel>
@@ -217,7 +217,7 @@
                         Padding="10"
                         Background="AliceBlue">
                     <StackPanel>
-                        <TextBlock Text="Сравнение триггеров:"
+                        <TextBlock Text="{local:Loc Triggers_Comparison_Title}"
                                    FontWeight="Bold"
                                    Margin="0,0,0,5" />
 
@@ -230,35 +230,35 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Column="0">
-                                <TextBlock Text="PropertyTrigger"
+                                <TextBlock Text="{local:Loc Triggers_Comparison_PropertyTrigger_Title}"
                                            FontWeight="Bold" />
-                                <TextBlock Text="• Запуск: изменение свойства" />
-                                <TextBlock Text="• Пример: IsMouseOver" />
-                                <TextBlock Text="• Прост в использовании" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_PropertyTrigger_Line1}" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_PropertyTrigger_Line2}" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_PropertyTrigger_Line3}" />
                             </StackPanel>
 
                             <StackPanel Grid.Column="1">
-                                <TextBlock Text="DataTrigger"
+                                <TextBlock Text="{local:Loc Triggers_Comparison_DataTrigger_Title}"
                                            FontWeight="Bold" />
-                                <TextBlock Text="• Запуск: изменение данных" />
-                                <TextBlock Text="• Пример: значение TextBox" />
-                                <TextBlock Text="• Гибкий, зависит от данных" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_DataTrigger_Line1}" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_DataTrigger_Line2}" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_DataTrigger_Line3}" />
                             </StackPanel>
 
                             <StackPanel Grid.Column="2">
-                                <TextBlock Text="MultiDataTrigger"
+                                <TextBlock Text="{local:Loc Triggers_Comparison_MultiDataTrigger_Title}"
                                            FontWeight="Bold" />
-                                <TextBlock Text="• Запуск: несколько условий" />
-                                <TextBlock Text="• Пример: все CheckBox=true" />
-                                <TextBlock Text="• Сложные условия" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_MultiDataTrigger_Line1}" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_MultiDataTrigger_Line2}" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_MultiDataTrigger_Line3}" />
                             </StackPanel>
 
                             <StackPanel Grid.Column="3">
-                                <TextBlock Text="EventTrigger"
+                                <TextBlock Text="{local:Loc Triggers_Comparison_EventTrigger_Title}"
                                            FontWeight="Bold" />
-                                <TextBlock Text="• Запуск: событие" />
-                                <TextBlock Text="• Пример: Click" />
-                                <TextBlock Text="• Для анимаций" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_EventTrigger_Line1}" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_EventTrigger_Line2}" />
+                                <TextBlock Text="{local:Loc Triggers_Comparison_EventTrigger_Line3}" />
                             </StackPanel>
                         </Grid>
                     </StackPanel>

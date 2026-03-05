@@ -1,30 +1,30 @@
-﻿<UserControl x:Class="WpfBindingDemo.Views.Tabs.OneWayBindingView"
+<UserControl x:Class="WpfBindingDemo.Views.Tabs.OneWayBindingView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:WpfBindingDemo.Views.Tabs"
+             xmlns:local="clr-namespace:WpfBindingDemo"
              mc:Ignorable="d"
              d:DesignHeight="400"
              d:DesignWidth="600"
              Background="White">
 
     <Grid Margin="10">
-        <ScrollViewer>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <TextBlock Text="Односторонняя привязка"
+                <TextBlock Text="{local:Loc OneWay_Title}"
                            FontSize="16"
                            FontWeight="Bold"
                            Margin="0,0,0,10" />
 
-                <TextBlock Text="Односторонняя привязка обновляет цель при изменении источника, но изменения цели НЕ влияют на источник."
+                <TextBlock Text="{local:Loc OneWay_Description}"
                            TextWrapping="Wrap"
                            Margin="0,0,0,20" />
 
-                <GroupBox Header="1. Прямая OneWay привязка между элементами"
+                <GroupBox Header="{local:Loc OneWay_Group1}"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
-                        <TextBlock Text="Slider → ProgressBar (OneWay):" />
+                        <TextBlock Text="{local:Loc OneWay_Group1_SliderText}" />
                         <Slider x:Name="SourceSlider"
                                 Minimum="0"
                                 Maximum="100"
@@ -35,26 +35,26 @@
                                      Height="20"
                                      Margin="0,0,0,5" />
 
-                        <TextBlock Text="Значение:"
+                        <TextBlock Text="{local:Loc OneWay_Group1_ValueLabel}"
                                    Margin="0,10,0,5" />
                         <TextBlock Text="{Binding Value, ElementName=SourceSlider, Mode=OneWay}"
                                    FontWeight="Bold"/>
 
-                        <TextBlock Text="Изменение слайдера обновляет ProgressBar и TextBlock, но обратно - нет"
+                        <TextBlock Text="{local:Loc OneWay_Group1_Hint}"
                                    FontStyle="Italic"
                                    Foreground="Gray"
                                    Margin="0,10,0,0" />
                     </StackPanel>
                 </GroupBox>
 
-                <GroupBox Header="2. OneWay привязка через ViewModel"
+                <GroupBox Header="{local:Loc OneWay_Group2}"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
-                        <TextBlock Text="Источник данных (можно менять):" />
+                        <TextBlock Text="{local:Loc OneWay_Source_Label}" />
                         <TextBox Text="{Binding SourceValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Margin="0,5,0,10" />
 
-                        <TextBlock Text="OneWay привязки к одному свойству:" />
+                        <TextBlock Text="{local:Loc OneWay_OneWayBindings_Label}" />
 
                         <Border BorderBrush="LightGray"
                                 BorderThickness="1"
@@ -71,9 +71,11 @@
                                 CornerRadius="3"
                                 Padding="5"
                                 Margin="0,5,0,5">
-                            <TextBlock Text="{Binding SourceValue, StringFormat='Значение: {0}', Mode=OneWay}"
-                                       Background="#b9a3f0"
-                                       Padding="3" />
+                            <TextBlock Background="#b9a3f0"
+                                       Padding="3">
+                                <Run Text="{local:Loc OneWay_Format_Prefix}" />
+                                <Run Text="{Binding SourceValue, Mode=OneWay}" />
+                            </TextBlock>
                         </Border>
 
                         <Border BorderBrush="LightGray"
@@ -82,26 +84,26 @@
                                 Padding="5"
                                 Margin="0,5,0,10">
                             <TextBlock>
-                                <Run Text="Длина:" />
+                                <Run Text="{local:Loc OneWay_Length_Label}" />
                                 <Run Text="{Binding SourceValue.Length, Mode=OneWay}"
                                      FontWeight="Bold" />
-                                <Run Text="символов" />
+                                <Run Text="{local:Loc OneWay_Length_Suffix}" />
                             </TextBlock>
                         </Border>
 
-                        <TextBlock Text="Все элементы обновляются при изменении TextBox, но не могут изменить его"
+                        <TextBlock Text="{local:Loc OneWay_Group2_Hint}"
                                    FontStyle="Italic"
                                    Foreground="Gray" />
                     </StackPanel>
                 </GroupBox>
 
-                <GroupBox Header="3. OneWay vs Default Binding Mode"
+                <GroupBox Header="{local:Loc OneWay_Group3}"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
-                        <TextBlock Text="Для TextBlock Mode=OneWay установлен по умолчанию:" />
+                        <TextBlock Text="{local:Loc OneWay_Group3_DefaultMode_Title}" />
 
                         <TextBox x:Name="ComparisonSource"
-                                 Text="Тестовый текст"
+                                 Text="{local:Loc OneWay_ComparisonSource_DefaultText}"
                                  Margin="0,5,0,5" />
 
                         <Grid>
@@ -112,7 +114,7 @@
 
                             <StackPanel Grid.Column="0"
                                         Margin="0,0,10,0">
-                                <TextBlock Text="Явно указан OneWay:" />
+                                <TextBlock Text="{local:Loc OneWay_Group3_ExplicitOneWay}" />
                                 <TextBlock Text="{Binding Text, ElementName=ComparisonSource, Mode=OneWay}"
                                            Background="LightYellow"
                                            Padding="5"
@@ -121,7 +123,7 @@
 
                             <StackPanel Grid.Column="1"
                                         Margin="10,0,0,0">
-                                <TextBlock Text="Режим по умолчанию:" />
+                                <TextBlock Text="{local:Loc OneWay_Group3_DefaultMode_Label}" />
                                 <TextBlock Text="{Binding Text, ElementName=ComparisonSource}"
                                            Background="#b9a3f0"
                                            Padding="5"
@@ -129,17 +131,17 @@
                             </StackPanel>
                         </Grid>
 
-                        <TextBlock Text="Оба работают одинаково, так как OneWay - default для TextBlock"
+                        <TextBlock Text="{local:Loc OneWay_Group3_SameBehavior}"
                                    FontStyle="Italic"
                                    Foreground="Gray"
                                    Margin="0,10,0,0" />
                     </StackPanel>
                 </GroupBox>
 
-                <GroupBox Header="4. OneWay к вычисляемому свойству"
+                <GroupBox Header="{local:Loc OneWay_Group4}"
                           Margin="0,0,0,15">
                     <StackPanel Margin="5">
-                        <TextBlock Text="Два числа (TwoWay привязка):" />
+                        <TextBlock Text="{local:Loc OneWay_Group4_TwoNumbers}" />
 
                         <Grid Margin="0,5,0,10">
                             <Grid.ColumnDefinitions>
@@ -148,19 +150,19 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Column="0">
-                                <TextBlock Text="Число A:" />
+                                <TextBlock Text="{local:Loc OneWay_NumberA_Label}" />
                                 <TextBox Text="{Binding NumberA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                          Margin="0,2,5,5" />
                             </StackPanel>
 
                             <StackPanel Grid.Column="1">
-                                <TextBlock Text="Число B:" />
+                                <TextBlock Text="{local:Loc OneWay_NumberB_Label}" />
                                 <TextBox Text="{Binding NumberB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                          Margin="5,2,0,5" />
                             </StackPanel>
                         </Grid>
 
-                        <TextBlock Text="Вычисляемые свойства (OneWay, только для чтения):" />
+                        <TextBlock Text="{local:Loc OneWay_Computed_Label}" />
 
                         <Border BorderBrush="LightGray"
                                 BorderThickness="1"
@@ -168,7 +170,7 @@
                                 Padding="5"
                                 Margin="0,5,0,5">
                             <TextBlock>
-                                <Run Text="Сумма:" />
+                                <Run Text="{local:Loc OneWay_Sum_Label}" />
                                 <Run Text="{Binding Sum, Mode=OneWay}"
                                      FontWeight="Bold" />
                             </TextBlock>
@@ -180,7 +182,7 @@
                                 Padding="5"
                                 Margin="0,5,0,5">
                             <TextBlock>
-                                <Run Text="Разность:" />
+                                <Run Text="{local:Loc OneWay_Difference_Label}" />
                                 <Run Text="{Binding Difference, Mode=OneWay}"
                                      FontWeight="Bold" />
                             </TextBlock>
@@ -192,7 +194,7 @@
                                 Padding="5"
                                 Margin="0,5,0,0">
                             <TextBlock>
-                                <Run Text="Произведение:" />
+                                <Run Text="{local:Loc OneWay_Product_Label}" />
                                 <Run Text="{Binding Product, Mode=OneWay}"
                                      FontWeight="Bold" />
                             </TextBlock>

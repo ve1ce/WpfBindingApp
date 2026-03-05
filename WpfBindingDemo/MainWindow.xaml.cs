@@ -21,10 +21,31 @@ namespace WpfBindingDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool _isInitialized = false;
+
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new MainViewModel();
+
+            this.Loaded += (s, e) =>
+            {
+                _isInitialized = true;
+            };
+        }
+
+        private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!_isInitialized) return;
+
+            if (LanguageComboBox.SelectedItem is ComboBoxItem selectedItem)
+            {
+                var culture = selectedItem.Tag as string;
+                if (!string.IsNullOrEmpty(culture))
+                {
+                    Localization.SetLanguage(culture);
+                }
+            }
         }
     }
 }

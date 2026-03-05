@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
+using WpfBindingDemo;
 using System.Windows.Input;
 
 namespace WpfBindingDemo.ViewModels
@@ -13,7 +13,7 @@ namespace WpfBindingDemo.ViewModels
     /// </summary>
     public class OneTimeBindingViewModel : ViewModelBase
     {
-        private string _oneTimeValue = "Начальное значение из ViewModel";
+        private string _oneTimeValue = Localization.GetString("OneTime_InitialValueFromViewModel");
         private Random _random = new Random();
 
         public string OneTimeValue
@@ -31,7 +31,8 @@ namespace WpfBindingDemo.ViewModels
 
         private void UpdateOneTimeValue()
         {
-            OneTimeValue = $"Новое значение: {_random.Next(1000)}";
+            var format = Localization.GetString("OneTime_NewValue_Format");
+            OneTimeValue = string.Format(format, _random.Next(1000));
         }
     }
 }
