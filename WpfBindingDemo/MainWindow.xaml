@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfBindingDemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="{local:Loc MainWindow_Title}"
+        Height="550"
+        Width="800">
+
+    <DockPanel LastChildFill="True">
+        <!-- Панель выбора языка -->
+        <StackPanel DockPanel.Dock="Top"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="10">
+            <TextBlock Text="{local:Loc Language_Label}"
+                       VerticalAlignment="Center"
+                       Margin="0,0,10,0" />
+            <ComboBox x:Name="LanguageComboBox"
+                      Width="120"
+                      SelectionChanged="LanguageComboBox_SelectionChanged">
+                <ComboBoxItem Tag="ru"
+                              Content="Русский"
+                              IsSelected="True" />
+                <ComboBoxItem Tag="en"
+                              Content="English" />
+            </ComboBox>
+        </StackPanel>
+
+        <!-- TabControl -->
+        <TabControl ItemsSource="{Binding Tabs}"
+                    SelectedIndex="0"
+                    Margin="10,0,10,10">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding TabName}" />
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <ContentControl Content="{Binding TabContent}" />
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+    </DockPanel>
 </Window>

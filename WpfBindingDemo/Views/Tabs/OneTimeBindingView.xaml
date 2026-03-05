@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="WpfBindingDemo.Views.Tabs.OneTimeBindingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfBindingDemo"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             Background="White">
+
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="{local:Loc OneTime_Title}"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Margin="0,0,0,10" />
+
+            <TextBlock Text="{local:Loc OneTime_Description}"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,20" />
+
+            <GroupBox Header="{local:Loc OneTime_Group1}"
+                      Margin="0,0,0,10">
+                <StackPanel Margin="5">
+                    <TextBlock Text="{local:Loc OneTime_Label_OriginalValue}" />
+                    <TextBox x:Name="SourceTextBox"
+                             Text="{local:Loc SourceTextBox_DefaultText}"
+                             Margin="0,5,0,5" />
+
+                    <TextBlock Text="{local:Loc OneTime_Label_OneTimeBinding}" />
+                    <TextBlock Text="{Binding Text, ElementName=SourceTextBox, Mode=OneTime}"
+                               Background="LightYellow"
+                               Padding="5"
+                               Margin="0,5,0,0" />
+
+                    <TextBlock Text="{local:Loc OneTime_Hint_ChangeText}"
+                               FontStyle="Italic"
+                               Foreground="Gray"
+                               Margin="0,10,0,0" />
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="{local:Loc OneTime_Group2}"
+                      Margin="0,0,0,10">
+                <StackPanel Margin="5">
+                    <TextBlock Text="{local:Loc OneTime_Label_ValueFromVM}" />
+                    <TextBox Text="{Binding OneTimeValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Margin="0,5,0,5" />
+
+                    <TextBlock Text="{local:Loc OneTime_Label_OneTimeToVM}" />
+                    <TextBlock Text="{Binding OneTimeValue, Mode=OneTime}"
+                               Background="LightYellow"
+                               Padding="5"
+                               Margin="0,5,0,0" />
+
+                    <Button Content="{local:Loc OneTime_Button_Update}"
+                            Command="{Binding UpdateOneTimeValueCommand}"
+                            Margin="0,10,0,0"
+                            Padding="5" />
+
+                    <TextBlock Text="{local:Loc OneTime_Hint_NoUpdate}"
+                               FontStyle="Italic"
+                               Foreground="Gray"
+                               Margin="0,10,0,0" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

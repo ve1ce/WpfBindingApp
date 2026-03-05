@@ -1,0 +1,134 @@
+<UserControl x:Class="WpfBindingDemo.Views.Tabs.TwoWayBindingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfBindingDemo"
+             mc:Ignorable="d"
+             d:DesignHeight="400"
+             d:DesignWidth="600"
+             Background="White">
+
+    <Grid Margin="10">
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="{local:Loc TwoWay_Title}"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10" />
+
+                <TextBlock Text="{local:Loc TwoWay_Description}"
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,20" />
+
+                <GroupBox Header="{local:Loc TwoWay_Group1}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{local:Loc TwoWay_Group1_SliderText}" />
+                        <Slider x:Name="DirectSlider"
+                                Minimum="0"
+                                Maximum="100"
+                                Value="50"
+                                Margin="0,5,0,5" />
+
+                        <TextBox Text="{Binding Value, ElementName=DirectSlider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Margin="0,0,0,10" />
+
+                        <TextBlock Text="{local:Loc TwoWay_Group1_Hint}"
+                                   FontStyle="Italic"
+                                   Foreground="Gray" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{local:Loc TwoWay_Group2}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{local:Loc TwoWay_VM_Intro}" />
+
+                        <TextBlock Text="{local:Loc TwoWay_VM_UserNameLabel}"
+                                   Margin="0,10,0,5" />
+
+                        <TextBox Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Margin="0,0,0,5" />
+
+                        <TextBlock Text="{Binding UserName}"
+                                   Background="LightYellow"
+                                   Padding="5"
+                                   Margin="0,0,0,10" />
+
+                        <TextBlock Text="{local:Loc TwoWay_VM_AgeLabel}"
+                                   Margin="0,10,0,5" />
+
+                        <Slider Value="{Binding Age, Mode=TwoWay}"
+                                Minimum="0"
+                                Maximum="100"
+                                Margin="0,0,0,5" />
+
+                        <TextBox Text="{Binding Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Margin="0,0,0,5" />
+
+                        <Border Background="LightYellow"
+                                Padding="5"
+                                Margin="0,0,0,10">
+                            <TextBlock>
+                                <Run Text="{local:Loc TwoWay_Age_Prefix}" />
+                                <Run Text="{Binding Age}" />
+                            </TextBlock>
+                        </Border>
+
+                        <TextBlock Text="{local:Loc TwoWay_VM_IsActiveLabel}"
+                                   Margin="0,10,0,5" />
+
+                        <CheckBox IsChecked="{Binding IsActive, Mode=TwoWay}"
+                                  Content="{local:Loc TwoWay_VM_IsActiveContent}"
+                                  Margin="0,0,0,5" />
+
+                        <Border Background="LightYellow"
+                                Padding="5">
+                            <TextBlock>
+                                <Run Text="{local:Loc TwoWay_VM_ActiveStatusLabel}" />
+                                <Run Text="{Binding IsActive}" />
+                            </TextBlock>
+                        </Border>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{local:Loc TwoWay_Group3}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{local:Loc TwoWay_UpdateSourceTrigger_Title1}" />
+                        <TextBox Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Margin="0,5,0,10" />
+
+                        <TextBlock Text="{local:Loc TwoWay_UpdateSourceTrigger_Title2}" />
+                        <TextBox Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                                 Margin="0,5,0,10" />
+
+                        <TextBlock Text="{local:Loc TwoWay_UpdateSourceTrigger_Title3}" />
+                        <TextBox x:Name="ExplicitTextBox"
+                                 Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                 Margin="0,5,0,5" />
+
+                        <Button Content="{local:Loc TwoWay_UpdateSourceTrigger_Button}"
+                                Click="UpdateExplicitBinding_Click"
+                                Padding="5"
+                                Width="150" />
+                    </StackPanel>
+                </GroupBox>
+
+                <Border BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Padding="10"
+                        Background="LightYellow">
+                    <StackPanel>
+                        <TextBlock Text="{local:Loc TwoWay_Summary_Title}"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,5" />
+                        <TextBlock Text="{Binding CurrentValues}" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
