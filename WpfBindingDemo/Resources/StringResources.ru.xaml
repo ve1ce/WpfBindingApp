@@ -1,0 +1,155 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Общие -->
+    <sys:String x:Key="App_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">WPF Пример привязки</sys:String>
+    <sys:String x:Key="Language_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">Язык:</sys:String>
+    <sys:String x:Key="Language_Russian" xmlns:sys="clr-namespace:System;assembly=mscorlib">Русский</sys:String>
+    <sys:String x:Key="Language_English" xmlns:sys="clr-namespace:System;assembly=mscorlib">Английский</sys:String>
+
+    <!-- Названия вкладок -->
+    <sys:String x:Key="Tab_OneTime" xmlns:sys="clr-namespace:System;assembly=mscorlib">Одноразовая привязка</sys:String>
+    <sys:String x:Key="Tab_TwoWay" xmlns:sys="clr-namespace:System;assembly=mscorlib">Двусторонняя привязка</sys:String>
+    <sys:String x:Key="Tab_OneWay" xmlns:sys="clr-namespace:System;assembly=mscorlib">Односторонняя привязка</sys:String>
+    <sys:String x:Key="Tab_Default" xmlns:sys="clr-namespace:System;assembly=mscorlib">Привязка по-умолчанию</sys:String>
+    <sys:String x:Key="Tab_Triggers" xmlns:sys="clr-namespace:System;assembly=mscorlib">Триггеры</sys:String>
+
+    <!-- DefaultBindingView -->
+    <sys:String x:Key="DefaultBinding_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Привязка по-умолчанию</sys:String>
+    <sys:String x:Key="DefaultBinding_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Каждый элемент WPF имеет режим привязки по умолчанию. Если не указать Mode явно, используется этот режим.</sys:String>
+    <sys:String x:Key="DefaultBinding_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">Демонстрация: одно свойство, разные элементы</sys:String>
+    <sys:String x:Key="DefaultBinding_SourceValue_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">Исходное значение (можно менять):</sys:String>
+    <sys:String x:Key="DefaultBinding_OneWayElements_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Элементы OneWay (по умолчанию):</sys:String>
+    <sys:String x:Key="DefaultBinding_TextBlock_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">TextBlock (только чтение):</sys:String>
+    <sys:String x:Key="DefaultBinding_ProgressBar_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">ProgressBar:</sys:String>
+    <sys:String x:Key="DefaultBinding_ProgressBar_Value" xmlns:sys="clr-namespace:System;assembly=mscorlib">Значение: {0}</sys:String>
+    <sys:String x:Key="DefaultBinding_TwoWayElements_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Элементы TwoWay (по умолчанию):</sys:String>
+    <sys:String x:Key="DefaultBinding_TextBox_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">TextBox (редактирование):</sys:String>
+    <sys:String x:Key="DefaultBinding_Slider_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">Slider:</sys:String>
+    <sys:String x:Key="DefaultBinding_CheckBox_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">Состояние</sys:String>
+    <sys:String x:Key="DefaultBinding_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Попробуйте изменить значение в верхнем TextBox и посмотрите, как ведут себя разные элементы</sys:String>
+
+    <!-- OneTimeBindingView -->
+    <sys:String x:Key="OneTime_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Одноразовая привязка</sys:String>
+    <sys:String x:Key="OneTime_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Привязка OneTime устанавливается только один раз при инициализации и не обновляется при изменении источника.</sys:String>
+
+    <!-- TwoWayBindingView -->
+    <sys:String x:Key="TwoWay_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Двусторонняя привязка</sys:String>
+    <sys:String x:Key="TwoWay_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Двухсторонняя привязка обновляет и источник, и цель при изменениях в любую сторону.</sys:String>
+
+    <!-- OneWayBindingView -->
+    <sys:String x:Key="OneWay_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Односторонняя привязка</sys:String>
+    <sys:String x:Key="OneWay_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Односторонняя привязка обновляет цель при изменении источника, но изменения цели НЕ влияют на источник.</sys:String>
+
+    <!-- TriggersView -->
+    <sys:String x:Key="Triggers_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Триггеры</sys:String>
+    <sys:String x:Key="Triggers_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Триггеры позволяют автоматически изменять свойства элементов при определенных условиях.</sys:String>
+
+    <!-- DefaultBindingView - блок сравнения -->
+    <sys:String x:Key="DefaultBinding_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">Сравнение: Default Mode vs Явное указание Mode</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_Intro" xmlns:sys="clr-namespace:System;assembly=mscorlib">Два одинаковых TextBox с разными привязками:</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_LeftTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">TextBox без указания Mode:</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_LeftDescription" xmlns:sys="clr-namespace:System;assembly=mscorlib">Используется TwoWay (по умолчанию для TextBox)</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_RightTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">TextBox с Mode=OneWay:</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_RightDescription" xmlns:sys="clr-namespace:System;assembly=mscorlib">Явно указан OneWay, игнорирует default</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_ValueTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Значение:</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Попробуйте изменить текст в каждом TextBox. Первый обновит значение, второй - нет.</sys:String>
+
+    <!-- OneTimeBindingView - группы -->
+    <sys:String x:Key="OneTime_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Прямая привязка к элементу</sys:String>
+    <sys:String x:Key="OneTime_Group1_SourceLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Исходное значение:</sys:String>
+    <sys:String x:Key="OneTime_Group1_InitialValue" xmlns:sys="clr-namespace:System;assembly=mscorlib">Начальное значение</sys:String>
+    <sys:String x:Key="OneTime_Group1_OneTimeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneTime привязка к TextBox выше:</sys:String>
+    <sys:String x:Key="OneTime_Group1_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Попробуйте изменить текст в TextBox выше - этот TextBlock не обновится</sys:String>
+    <sys:String x:Key="OneTime_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">2. Привязка через ViewModel</sys:String>
+    <sys:String x:Key="OneTime_Group2_ValueFromVm" xmlns:sys="clr-namespace:System;assembly=mscorlib">Значение из ViewModel:</sys:String>
+    <sys:String x:Key="OneTime_Group2_OneTimeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneTime привязка к тому же свойству:</sys:String>
+    <sys:String x:Key="OneTime_Group2_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Обновить свойство вручную</sys:String>
+    <sys:String x:Key="OneTime_Group2_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneTime привязка НЕ обновится даже при изменении свойства в ViewModel</sys:String>
+
+    <!-- TwoWayBindingView - группы -->
+    <sys:String x:Key="TwoWay_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Прямая TwoWay привязка между элементами</sys:String>
+    <sys:String x:Key="TwoWay_Group1_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Slider и TextBox связаны TwoWay привязкой:</sys:String>
+    <sys:String x:Key="TwoWay_Group1_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Изменение ползунка обновляет TextBox и наоборот</sys:String>
+    <sys:String x:Key="TwoWay_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">2. TwoWay привязка через ViewModel</sys:String>
+    <sys:String x:Key="TwoWay_Group2_Intro" xmlns:sys="clr-namespace:System;assembly=mscorlib">Все элементы связаны с одним свойством ViewModel:</sys:String>
+    <sys:String x:Key="TwoWay_Group2_UserNameLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Имя пользователя:</sys:String>
+    <sys:String x:Key="TwoWay_Group2_AgeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Возраст:</sys:String>
+    <sys:String x:Key="TwoWay_Group2_AgePrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Возраст: </sys:String>
+    <sys:String x:Key="TwoWay_Group2_AgeSuffix" xmlns:sys="clr-namespace:System;assembly=mscorlib"> лет</sys:String>
+    <sys:String x:Key="TwoWay_Group2_IsActiveLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Активен:</sys:String>
+    <sys:String x:Key="TwoWay_Group2_IsActiveContent" xmlns:sys="clr-namespace:System;assembly=mscorlib">Пользователь активен</sys:String>
+    <sys:String x:Key="TwoWay_Group2_StatusPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Статус активности: </sys:String>
+    <sys:String x:Key="TwoWay_Group3_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">3. Разница UpdateSourceTrigger</sys:String>
+    <sys:String x:Key="TwoWay_Group3_PropertyChanged" xmlns:sys="clr-namespace:System;assembly=mscorlib">PropertyChanged (обновление при каждом изменении):</sys:String>
+    <sys:String x:Key="TwoWay_Group3_LostFocus" xmlns:sys="clr-namespace:System;assembly=mscorlib">LostFocus (обновление при потере фокуса):</sys:String>
+    <sys:String x:Key="TwoWay_Group3_Explicit" xmlns:sys="clr-namespace:System;assembly=mscorlib">Explicit (обновление только при вызове UpdateSource):</sys:String>
+    <sys:String x:Key="TwoWay_Group3_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Обновить источник</sys:String>
+    <sys:String x:Key="TwoWay_CurrentValuesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Текущие значения в ViewModel:</sys:String>
+
+    <!-- OneWayBindingView - группы -->
+    <sys:String x:Key="OneWay_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Прямая OneWay привязка между элементами</sys:String>
+    <sys:String x:Key="OneWay_Group1_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Slider → ProgressBar (OneWay):</sys:String>
+    <sys:String x:Key="OneWay_Group1_ValueTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Значение:</sys:String>
+    <sys:String x:Key="OneWay_Group1_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Изменение слайдера обновляет ProgressBar и TextBlock, но обратно - нет</sys:String>
+    <sys:String x:Key="OneWay_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">2. OneWay привязка через ViewModel</sys:String>
+    <sys:String x:Key="OneWay_Group2_SourceLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Источник данных (можно менять):</sys:String>
+    <sys:String x:Key="OneWay_Group2_OneWayLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneWay привязки к одному свойству:</sys:String>
+    <sys:String x:Key="OneWay_Group2_FormatPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Значение: </sys:String>
+    <sys:String x:Key="OneWay_Group2_LengthPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Длина:</sys:String>
+    <sys:String x:Key="OneWay_Group2_LengthSuffix" xmlns:sys="clr-namespace:System;assembly=mscorlib">символов</sys:String>
+    <sys:String x:Key="OneWay_Group2_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Все элементы обновляются при изменении TextBox, но не могут изменить его</sys:String>
+    <sys:String x:Key="OneWay_Group3_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">3. OneWay vs Default Binding Mode</sys:String>
+    <sys:String x:Key="OneWay_Group3_Intro" xmlns:sys="clr-namespace:System;assembly=mscorlib">Для TextBlock Mode=OneWay установлен по умолчанию:</sys:String>
+    <sys:String x:Key="OneWay_Group3_InitialText" xmlns:sys="clr-namespace:System;assembly=mscorlib">Тестовый текст</sys:String>
+    <sys:String x:Key="OneWay_Group3_LeftTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Явно указан OneWay:</sys:String>
+    <sys:String x:Key="OneWay_Group3_RightTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Режим по умолчанию:</sys:String>
+    <sys:String x:Key="OneWay_Group3_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Оба работают одинаково, так как OneWay - default для TextBlock</sys:String>
+    <sys:String x:Key="OneWay_Group4_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">4. OneWay к вычисляемому свойству</sys:String>
+    <sys:String x:Key="OneWay_Group4_Intro" xmlns:sys="clr-namespace:System;assembly=mscorlib">Два числа (TwoWay привязка):</sys:String>
+    <sys:String x:Key="OneWay_Group4_NumberA" xmlns:sys="clr-namespace:System;assembly=mscorlib">Число A:</sys:String>
+    <sys:String x:Key="OneWay_Group4_NumberB" xmlns:sys="clr-namespace:System;assembly=mscorlib">Число B:</sys:String>
+    <sys:String x:Key="OneWay_Group4_ResultIntro" xmlns:sys="clr-namespace:System;assembly=mscorlib">Вычисляемые свойства (OneWay, только для чтения):</sys:String>
+    <sys:String x:Key="OneWay_Group4_Sum" xmlns:sys="clr-namespace:System;assembly=mscorlib">Сумма:</sys:String>
+    <sys:String x:Key="OneWay_Group4_Difference" xmlns:sys="clr-namespace:System;assembly=mscorlib">Разность:</sys:String>
+    <sys:String x:Key="OneWay_Group4_Product" xmlns:sys="clr-namespace:System;assembly=mscorlib">Произведение:</sys:String>
+
+    <!-- TriggersView - группы -->
+    <sys:String x:Key="Triggers_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Property Trigger (запускается при изменении свойства)</sys:String>
+    <sys:String x:Key="Triggers_Group1_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Кнопка меняет цвет при наведении мыши (IsMouseOver) и при нажатии (IsPressed):</sys:String>
+    <sys:String x:Key="Triggers_Group1_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Наведи на меня мышь</sys:String>
+    <sys:String x:Key="Triggers_Group1_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Срабатывает при изменении свойства элемента (IsMouseOver, IsPressed)</sys:String>
+    <sys:String x:Key="Triggers_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">2. Data Trigger (запускается при изменении данных)</sys:String>
+    <sys:String x:Key="Triggers_Group2_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Цвет рамки зависит от значения в TextBox:</sys:String>
+    <sys:String x:Key="Triggers_Group2_InitialText" xmlns:sys="clr-namespace:System;assembly=mscorlib">Введи 'active' или 'error'</sys:String>
+    <sys:String x:Key="Triggers_Group2_CenterText" xmlns:sys="clr-namespace:System;assembly=mscorlib">Проверка состояния</sys:String>
+    <sys:String x:Key="Triggers_Group2_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Срабатывает при изменении данных, а не свойств элемента</sys:String>
+    <sys:String x:Key="Triggers_Group3_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">3. MultiData Trigger (несколько условий)</sys:String>
+    <sys:String x:Key="Triggers_Group3_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Кнопка активируется только когда оба CheckBox отмечены:</sys:String>
+    <sys:String x:Key="Triggers_Group3_CheckBox1" xmlns:sys="clr-namespace:System;assembly=mscorlib">Обязательное условие 1</sys:String>
+    <sys:String x:Key="Triggers_Group3_CheckBox2" xmlns:sys="clr-namespace:System;assembly=mscorlib">Обязательное условие 2</sys:String>
+    <sys:String x:Key="Triggers_Group3_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Продолжить</sys:String>
+    <sys:String x:Key="Triggers_Group3_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Срабатывает только при выполнении ВСЕХ условий</sys:String>
+    <sys:String x:Key="Triggers_Group4_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">4. Event Trigger (запускается при событии)</sys:String>
+    <sys:String x:Key="Triggers_Group4_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Анимация при нажатии на кнопку:</sys:String>
+    <sys:String x:Key="Triggers_Group4_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Нажми для анимации</sys:String>
+    <sys:String x:Key="Triggers_Group4_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Срабатывает при событии (Click, MouseEnter и т.д.), обычно для анимаций</sys:String>
+    <sys:String x:Key="Triggers_CompareTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Сравнение триггеров:</sys:String>
+    <sys:String x:Key="Triggers_Compare_PropertyTriggerTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">PropertyTrigger</sys:String>
+    <sys:String x:Key="Triggers_Compare_PropertyTrigger_Line1" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Запуск: изменение свойства</sys:String>
+    <sys:String x:Key="Triggers_Compare_PropertyTrigger_Line2" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Пример: IsMouseOver</sys:String>
+    <sys:String x:Key="Triggers_Compare_PropertyTrigger_Line3" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Прост в использовании</sys:String>
+    <sys:String x:Key="Triggers_Compare_DataTriggerTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">DataTrigger</sys:String>
+    <sys:String x:Key="Triggers_Compare_DataTrigger_Line1" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Запуск: изменение данных</sys:String>
+    <sys:String x:Key="Triggers_Compare_DataTrigger_Line2" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Пример: значение TextBox</sys:String>
+    <sys:String x:Key="Triggers_Compare_DataTrigger_Line3" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Гибкий, зависит от данных</sys:String>
+    <sys:String x:Key="Triggers_Compare_MultiDataTriggerTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">MultiDataTrigger</sys:String>
+    <sys:String x:Key="Triggers_Compare_MultiDataTrigger_Line1" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Запуск: несколько условий</sys:String>
+    <sys:String x:Key="Triggers_Compare_MultiDataTrigger_Line2" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Пример: все CheckBox=true</sys:String>
+    <sys:String x:Key="Triggers_Compare_MultiDataTrigger_Line3" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Сложные условия</sys:String>
+    <sys:String x:Key="Triggers_Compare_EventTriggerTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">EventTrigger</sys:String>
+    <sys:String x:Key="Triggers_Compare_EventTrigger_Line1" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Запуск: событие</sys:String>
+    <sys:String x:Key="Triggers_Compare_EventTrigger_Line2" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Пример: Click</sys:String>
+    <sys:String x:Key="Triggers_Compare_EventTrigger_Line3" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Для анимаций</sys:String>
+
+</ResourceDictionary>

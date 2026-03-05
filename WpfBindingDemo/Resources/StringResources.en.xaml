@@ -1,0 +1,155 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Common -->
+    <sys:String x:Key="App_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">WPF Binding Sample</sys:String>
+    <sys:String x:Key="Language_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">Language:</sys:String>
+    <sys:String x:Key="Language_Russian" xmlns:sys="clr-namespace:System;assembly=mscorlib">Russian</sys:String>
+    <sys:String x:Key="Language_English" xmlns:sys="clr-namespace:System;assembly=mscorlib">English</sys:String>
+
+    <!-- Tab titles -->
+    <sys:String x:Key="Tab_OneTime" xmlns:sys="clr-namespace:System;assembly=mscorlib">One-time binding</sys:String>
+    <sys:String x:Key="Tab_TwoWay" xmlns:sys="clr-namespace:System;assembly=mscorlib">Two-way binding</sys:String>
+    <sys:String x:Key="Tab_OneWay" xmlns:sys="clr-namespace:System;assembly=mscorlib">One-way binding</sys:String>
+    <sys:String x:Key="Tab_Default" xmlns:sys="clr-namespace:System;assembly=mscorlib">Default binding</sys:String>
+    <sys:String x:Key="Tab_Triggers" xmlns:sys="clr-namespace:System;assembly=mscorlib">Triggers</sys:String>
+
+    <!-- DefaultBindingView -->
+    <sys:String x:Key="DefaultBinding_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Default binding mode</sys:String>
+    <sys:String x:Key="DefaultBinding_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Every WPF control has a default binding mode. If Mode is not specified explicitly, this mode is used.</sys:String>
+    <sys:String x:Key="DefaultBinding_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">Demo: one property, different controls</sys:String>
+    <sys:String x:Key="DefaultBinding_SourceValue_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">Source value (you can change it):</sys:String>
+    <sys:String x:Key="DefaultBinding_OneWayElements_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneWay elements (by default):</sys:String>
+    <sys:String x:Key="DefaultBinding_TextBlock_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">TextBlock (read-only):</sys:String>
+    <sys:String x:Key="DefaultBinding_ProgressBar_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">ProgressBar:</sys:String>
+    <sys:String x:Key="DefaultBinding_ProgressBar_Value" xmlns:sys="clr-namespace:System;assembly=mscorlib">Value: {0}</sys:String>
+    <sys:String x:Key="DefaultBinding_TwoWayElements_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">TwoWay elements (by default):</sys:String>
+    <sys:String x:Key="DefaultBinding_TextBox_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">TextBox (editing):</sys:String>
+    <sys:String x:Key="DefaultBinding_Slider_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">Slider:</sys:String>
+    <sys:String x:Key="DefaultBinding_CheckBox_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">State</sys:String>
+    <sys:String x:Key="DefaultBinding_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Try to change the value in the top TextBox and see how different controls behave</sys:String>
+
+    <!-- OneTimeBindingView -->
+    <sys:String x:Key="OneTime_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">One-time binding</sys:String>
+    <sys:String x:Key="OneTime_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneTime binding is evaluated only once during initialization and is not updated when the source changes.</sys:String>
+
+    <!-- TwoWayBindingView -->
+    <sys:String x:Key="TwoWay_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Two-way binding</sys:String>
+    <sys:String x:Key="TwoWay_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Two-way binding updates both the source and the target when either of them changes.</sys:String>
+
+    <!-- OneWayBindingView -->
+    <sys:String x:Key="OneWay_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">One-way binding</sys:String>
+    <sys:String x:Key="OneWay_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">One-way binding updates the target when the source changes, but changes in the target do NOT affect the source.</sys:String>
+
+    <!-- TriggersView -->
+    <sys:String x:Key="Triggers_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Triggers</sys:String>
+    <sys:String x:Key="Triggers_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Triggers allow you to automatically change control properties when some conditions are met.</sys:String>
+
+    <!-- DefaultBindingView - comparison block -->
+    <sys:String x:Key="DefaultBinding_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">Comparison: Default Mode vs Explicit Mode</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_Intro" xmlns:sys="clr-namespace:System;assembly=mscorlib">Two identical TextBoxes with different bindings:</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_LeftTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">TextBox without Mode specified:</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_LeftDescription" xmlns:sys="clr-namespace:System;assembly=mscorlib">Uses TwoWay (default for TextBox)</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_RightTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">TextBox with Mode=OneWay:</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_RightDescription" xmlns:sys="clr-namespace:System;assembly=mscorlib">Explicit OneWay, ignores default</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_ValueTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Value:</sys:String>
+    <sys:String x:Key="DefaultBinding_Group2_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Try changing text in both TextBoxes. The first will update the value, the second will not.</sys:String>
+
+    <!-- OneTimeBindingView - groups -->
+    <sys:String x:Key="OneTime_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Direct binding to a control</sys:String>
+    <sys:String x:Key="OneTime_Group1_SourceLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Source value:</sys:String>
+    <sys:String x:Key="OneTime_Group1_InitialValue" xmlns:sys="clr-namespace:System;assembly=mscorlib">Initial value</sys:String>
+    <sys:String x:Key="OneTime_Group1_OneTimeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneTime binding to the TextBox above:</sys:String>
+    <sys:String x:Key="OneTime_Group1_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Try changing the text in the TextBox above – this TextBlock will not update</sys:String>
+    <sys:String x:Key="OneTime_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">2. Binding through ViewModel</sys:String>
+    <sys:String x:Key="OneTime_Group2_ValueFromVm" xmlns:sys="clr-namespace:System;assembly=mscorlib">Value from ViewModel:</sys:String>
+    <sys:String x:Key="OneTime_Group2_OneTimeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneTime binding to the same property:</sys:String>
+    <sys:String x:Key="OneTime_Group2_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Update property manually</sys:String>
+    <sys:String x:Key="OneTime_Group2_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneTime binding will NOT update even when the property in the ViewModel changes</sys:String>
+
+    <!-- TwoWayBindingView - groups -->
+    <sys:String x:Key="TwoWay_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Direct TwoWay binding between controls</sys:String>
+    <sys:String x:Key="TwoWay_Group1_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Slider and TextBox are linked by TwoWay binding:</sys:String>
+    <sys:String x:Key="TwoWay_Group1_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Changing the slider updates the TextBox and vice versa</sys:String>
+    <sys:String x:Key="TwoWay_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">2. TwoWay binding through ViewModel</sys:String>
+    <sys:String x:Key="TwoWay_Group2_Intro" xmlns:sys="clr-namespace:System;assembly=mscorlib">All controls are bound to the same ViewModel property:</sys:String>
+    <sys:String x:Key="TwoWay_Group2_UserNameLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">User name:</sys:String>
+    <sys:String x:Key="TwoWay_Group2_AgeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Age:</sys:String>
+    <sys:String x:Key="TwoWay_Group2_AgePrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Age: </sys:String>
+    <sys:String x:Key="TwoWay_Group2_AgeSuffix" xmlns:sys="clr-namespace:System;assembly=mscorlib"> years</sys:String>
+    <sys:String x:Key="TwoWay_Group2_IsActiveLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Active:</sys:String>
+    <sys:String x:Key="TwoWay_Group2_IsActiveContent" xmlns:sys="clr-namespace:System;assembly=mscorlib">User is active</sys:String>
+    <sys:String x:Key="TwoWay_Group2_StatusPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Activity status: </sys:String>
+    <sys:String x:Key="TwoWay_Group3_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">3. Difference between UpdateSourceTrigger modes</sys:String>
+    <sys:String x:Key="TwoWay_Group3_PropertyChanged" xmlns:sys="clr-namespace:System;assembly=mscorlib">PropertyChanged (update on every change):</sys:String>
+    <sys:String x:Key="TwoWay_Group3_LostFocus" xmlns:sys="clr-namespace:System;assembly=mscorlib">LostFocus (update on losing focus):</sys:String>
+    <sys:String x:Key="TwoWay_Group3_Explicit" xmlns:sys="clr-namespace:System;assembly=mscorlib">Explicit (update only when UpdateSource is called):</sys:String>
+    <sys:String x:Key="TwoWay_Group3_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Update source</sys:String>
+    <sys:String x:Key="TwoWay_CurrentValuesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Current values in ViewModel:</sys:String>
+
+    <!-- OneWayBindingView - groups -->
+    <sys:String x:Key="OneWay_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Direct OneWay binding between controls</sys:String>
+    <sys:String x:Key="OneWay_Group1_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Slider → ProgressBar (OneWay):</sys:String>
+    <sys:String x:Key="OneWay_Group1_ValueTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Value:</sys:String>
+    <sys:String x:Key="OneWay_Group1_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Changing the slider updates the ProgressBar and TextBlock, but not the other way around</sys:String>
+    <sys:String x:Key="OneWay_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">2. OneWay binding through ViewModel</sys:String>
+    <sys:String x:Key="OneWay_Group2_SourceLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Data source (editable):</sys:String>
+    <sys:String x:Key="OneWay_Group2_OneWayLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneWay bindings to a single property:</sys:String>
+    <sys:String x:Key="OneWay_Group2_FormatPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Value: </sys:String>
+    <sys:String x:Key="OneWay_Group2_LengthPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Length:</sys:String>
+    <sys:String x:Key="OneWay_Group2_LengthSuffix" xmlns:sys="clr-namespace:System;assembly=mscorlib">characters</sys:String>
+    <sys:String x:Key="OneWay_Group2_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">All controls update when the TextBox changes, but cannot change it</sys:String>
+    <sys:String x:Key="OneWay_Group3_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">3. OneWay vs Default Binding Mode</sys:String>
+    <sys:String x:Key="OneWay_Group3_Intro" xmlns:sys="clr-namespace:System;assembly=mscorlib">For TextBlock, Mode=OneWay is the default:</sys:String>
+    <sys:String x:Key="OneWay_Group3_InitialText" xmlns:sys="clr-namespace:System;assembly=mscorlib">Sample text</sys:String>
+    <sys:String x:Key="OneWay_Group3_LeftTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Explicit OneWay:</sys:String>
+    <sys:String x:Key="OneWay_Group3_RightTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Default mode:</sys:String>
+    <sys:String x:Key="OneWay_Group3_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Both work the same, because OneWay is the default for TextBlock</sys:String>
+    <sys:String x:Key="OneWay_Group4_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">4. OneWay binding to calculated properties</sys:String>
+    <sys:String x:Key="OneWay_Group4_Intro" xmlns:sys="clr-namespace:System;assembly=mscorlib">Two numbers (TwoWay binding):</sys:String>
+    <sys:String x:Key="OneWay_Group4_NumberA" xmlns:sys="clr-namespace:System;assembly=mscorlib">Number A:</sys:String>
+    <sys:String x:Key="OneWay_Group4_NumberB" xmlns:sys="clr-namespace:System;assembly=mscorlib">Number B:</sys:String>
+    <sys:String x:Key="OneWay_Group4_ResultIntro" xmlns:sys="clr-namespace:System;assembly=mscorlib">Calculated properties (OneWay, read-only):</sys:String>
+    <sys:String x:Key="OneWay_Group4_Sum" xmlns:sys="clr-namespace:System;assembly=mscorlib">Sum:</sys:String>
+    <sys:String x:Key="OneWay_Group4_Difference" xmlns:sys="clr-namespace:System;assembly=mscorlib">Difference:</sys:String>
+    <sys:String x:Key="OneWay_Group4_Product" xmlns:sys="clr-namespace:System;assembly=mscorlib">Product:</sys:String>
+
+    <!-- TriggersView - groups -->
+    <sys:String x:Key="Triggers_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Property Trigger (fires on property change)</sys:String>
+    <sys:String x:Key="Triggers_Group1_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">The button changes color when the mouse is over it (IsMouseOver) and when it is pressed (IsPressed):</sys:String>
+    <sys:String x:Key="Triggers_Group1_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Hover over me</sys:String>
+    <sys:String x:Key="Triggers_Group1_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Fires when a control property changes (IsMouseOver, IsPressed)</sys:String>
+    <sys:String x:Key="Triggers_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">2. Data Trigger (fires on data change)</sys:String>
+    <sys:String x:Key="Triggers_Group2_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Border color depends on the value in the TextBox:</sys:String>
+    <sys:String x:Key="Triggers_Group2_InitialText" xmlns:sys="clr-namespace:System;assembly=mscorlib">Type 'active' or 'error'</sys:String>
+    <sys:String x:Key="Triggers_Group2_CenterText" xmlns:sys="clr-namespace:System;assembly=mscorlib">State check</sys:String>
+    <sys:String x:Key="Triggers_Group2_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Fires when data changes, not control properties</sys:String>
+    <sys:String x:Key="Triggers_Group3_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">3. MultiData Trigger (multiple conditions)</sys:String>
+    <sys:String x:Key="Triggers_Group3_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">The button is enabled only when both CheckBoxes are checked:</sys:String>
+    <sys:String x:Key="Triggers_Group3_CheckBox1" xmlns:sys="clr-namespace:System;assembly=mscorlib">Required condition 1</sys:String>
+    <sys:String x:Key="Triggers_Group3_CheckBox2" xmlns:sys="clr-namespace:System;assembly=mscorlib">Required condition 2</sys:String>
+    <sys:String x:Key="Triggers_Group3_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Continue</sys:String>
+    <sys:String x:Key="Triggers_Group3_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Fires only when ALL conditions are met</sys:String>
+    <sys:String x:Key="Triggers_Group4_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">4. Event Trigger (fires on event)</sys:String>
+    <sys:String x:Key="Triggers_Group4_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Animation on button click:</sys:String>
+    <sys:String x:Key="Triggers_Group4_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Click for animation</sys:String>
+    <sys:String x:Key="Triggers_Group4_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Fires on events (Click, MouseEnter, etc.), usually for animations</sys:String>
+    <sys:String x:Key="Triggers_CompareTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Triggers comparison:</sys:String>
+    <sys:String x:Key="Triggers_Compare_PropertyTriggerTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">PropertyTrigger</sys:String>
+    <sys:String x:Key="Triggers_Compare_PropertyTrigger_Line1" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Fires: property change</sys:String>
+    <sys:String x:Key="Triggers_Compare_PropertyTrigger_Line2" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Example: IsMouseOver</sys:String>
+    <sys:String x:Key="Triggers_Compare_PropertyTrigger_Line3" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Simple to use</sys:String>
+    <sys:String x:Key="Triggers_Compare_DataTriggerTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">DataTrigger</sys:String>
+    <sys:String x:Key="Triggers_Compare_DataTrigger_Line1" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Fires: data change</sys:String>
+    <sys:String x:Key="Triggers_Compare_DataTrigger_Line2" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Example: TextBox value</sys:String>
+    <sys:String x:Key="Triggers_Compare_DataTrigger_Line3" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Flexible, depends on data</sys:String>
+    <sys:String x:Key="Triggers_Compare_MultiDataTriggerTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">MultiDataTrigger</sys:String>
+    <sys:String x:Key="Triggers_Compare_MultiDataTrigger_Line1" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Fires: multiple conditions</sys:String>
+    <sys:String x:Key="Triggers_Compare_MultiDataTrigger_Line2" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Example: all CheckBox=true</sys:String>
+    <sys:String x:Key="Triggers_Compare_MultiDataTrigger_Line3" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Complex conditions</sys:String>
+    <sys:String x:Key="Triggers_Compare_EventTriggerTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">EventTrigger</sys:String>
+    <sys:String x:Key="Triggers_Compare_EventTrigger_Line1" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Fires: event</sys:String>
+    <sys:String x:Key="Triggers_Compare_EventTrigger_Line2" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Example: Click</sys:String>
+    <sys:String x:Key="Triggers_Compare_EventTrigger_Line3" xmlns:sys="clr-namespace:System;assembly=mscorlib">• Typically used for animations</sys:String>
+
+</ResourceDictionary>

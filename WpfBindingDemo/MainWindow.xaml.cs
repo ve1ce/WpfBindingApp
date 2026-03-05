@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +25,54 @@ namespace WpfBindingDemo
         {
             InitializeComponent();
             DataContext = new MainViewModel();
+        }
+
+        private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedComboBoxItem = LanguageComboBox.SelectedItem as ComboBoxItem;
+            if (selectedComboBoxItem == null)
+            {
+                return;
+            }
+
+            var languageTag = selectedComboBoxItem.Tag as string;
+            if (string.IsNullOrEmpty(languageTag))
+            {
+                return;
+            }
+
+            var dictionaries = Application.Current.Resources.MergedDictionaries;
+            if (dictionaries == null || dictionaries.Count == 0)
+            {
+                return;
+            }
+
+            string source;
+            if (languageTag == "en")
+            {
+                source = "Resources/StringResources.en.xaml";
+            }
+            else
+            {
+                source = "Resources/StringResources.ru.xaml";
+            }
+
+            try
+            {
+                var dictionary = new ResourceDictionary();
+                dictionary.Source = new Uri(source, UriKind.Relative);
+                dictionaries[0] = dictionary;
+
+                var mainViewModel = DataContext as MainViewModel;
+                if (mainViewModel != null)
+                {
+                    mainViewModel.UpdateTabTitles();
+                }
+            }
+            catch
+            {
+                // Игнорируем ошибки загрузки словаря
+            }
         }
     }
 }
