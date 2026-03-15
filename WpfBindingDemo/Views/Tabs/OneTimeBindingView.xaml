@@ -1,0 +1,70 @@
+<UserControl x:Class="WpfBindingDemo.Views.Tabs.OneTimeBindingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfBindingDemo.Views.Tabs"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             Background="White">
+
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="{Tr 'OneTime.Title'}"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Margin="0,0,0,10" />
+
+            <TextBlock Text="{Tr 'OneTime.Description'}"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,20" />
+
+            <GroupBox Header="{Tr 'OneTime.Group1.Header'}"
+                      Margin="0,0,0,10">
+                <StackPanel Margin="5">
+                    <TextBlock Text="{Tr 'OneTime.Group1.SourceLabel'}" />
+                    <TextBox x:Name="SourceTextBox"
+                        Text="{Binding Source=Начальное значение, Mode=OneTime}"
+                        Margin="0,5,0,5" />
+
+                    <TextBlock Text="{Tr 'OneTime.Group1.OneTimeToTextBox'}" />
+                    <TextBlock Text="{Binding Text, ElementName=SourceTextBox, Mode=OneTime}"
+                               Background="LightYellow"
+                               Padding="5"
+                               Margin="0,5,0,0" />
+
+                    <TextBlock Text="{Tr 'OneTime.Group1.Note'}"
+                               FontStyle="Italic"
+                               Foreground="Gray"
+                               Margin="0,10,0,0" />
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="{Tr 'OneTime.Group2.Header'}"
+                      Margin="0,0,0,10">
+                <StackPanel Margin="5">
+                    <TextBlock Text="{Tr 'OneTime.Group2.ValueFromVm'}" />
+                    <TextBox Text="{Binding OneTimeValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Margin="0,5,0,5" />
+
+                    <TextBlock Text="{Tr 'OneTime.Group2.OneTimeSameProperty'}" />
+                    <TextBlock Text="{Binding OneTimeValue, Mode=OneTime}"
+                               Background="LightYellow"
+                               Padding="5"
+                               Margin="0,5,0,0" />
+
+                    <Button Content="{Tr 'OneTime.Group2.UpdateButton'}"
+                            Command="{Binding UpdateOneTimeValueCommand}"
+                            Margin="0,10,0,0"
+                            Padding="5" />
+
+                    <TextBlock Text="{Tr 'OneTime.Group2.Note'}"
+                               FontStyle="Italic"
+                               Foreground="Gray"
+                               Margin="0,10,0,0" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

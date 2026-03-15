@@ -1,0 +1,269 @@
+<UserControl x:Class="WpfBindingDemo.Views.Tabs.TriggersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfBindingDemo.Views.Tabs"
+             mc:Ignorable="d"
+             d:DesignHeight="500"
+             d:DesignWidth="700"
+             Background="White">
+
+    <Grid Margin="10">
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="{Tr 'Triggers.Title'}"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10" />
+
+                <TextBlock Text="{Tr 'Triggers.Description'}"
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,20" />
+
+                <GroupBox Header="{Tr 'Triggers.Group1.Header'}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{Tr 'Triggers.Group1.Label'}" />
+
+                        <Button Content="{Tr 'Triggers.Group1.Button'}"
+                                Width="200"
+                                Height="40"
+                                Margin="0,10,0,10">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background"
+                                            Value="LightBlue" />
+                                    <Setter Property="Foreground"
+                                            Value="Black" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver"
+                                                 Value="True">
+                                            <Setter Property="Background"
+                                                    Value="DarkBlue" />
+                                            <Setter Property="Foreground"
+                                                    Value="White" />
+                                            <Setter Property="FontWeight"
+                                                    Value="Bold" />
+                                        </Trigger>
+
+                                        <Trigger Property="IsPressed"
+                                                 Value="True">
+                                            <Setter Property="Background"
+                                                    Value="Red" />
+                                            <Setter Property="Foreground"
+                                                    Value="White" />
+                                            <Setter Property="RenderTransform">
+                                                <Setter.Value>
+                                                    <ScaleTransform ScaleX="0.95"
+                                                                    ScaleY="0.95" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                        <TextBlock Text="{Tr 'Triggers.Group1.Note'}"
+                                   FontStyle="Italic"
+                                   Foreground="Gray" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{Tr 'Triggers.Group2.Header'}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{Tr 'Triggers.Group2.Label'}" />
+
+                        <TextBox x:Name="DataTriggerTextBox"
+                                 Text="{Binding Source=Введите active или error, Mode=OneWay}"
+                                 Width="200"
+                                 Margin="0,5,0,10" />
+
+                        <Border Width="200"
+                                Height="60"
+                                CornerRadius="5"
+                                HorizontalAlignment="Center">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background"
+                                            Value="LightGray" />
+                                    <Setter Property="BorderBrush"
+                                            Value="Gray" />
+                                    <Setter Property="BorderThickness"
+                                            Value="2" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=DataTriggerTextBox}"
+                                                     Value="active">
+                                            <Setter Property="BorderBrush"
+                                                    Value="Green" />
+                                            <Setter Property="BorderThickness"
+                                                    Value="3" />
+                                            <Setter Property="Background"
+                                                    Value="LightGreen" />
+                                        </DataTrigger>
+
+                                        <DataTrigger Binding="{Binding Text, ElementName=DataTriggerTextBox}"
+                                                     Value="error">
+                                            <Setter Property="BorderBrush"
+                                                    Value="Red" />
+                                            <Setter Property="BorderThickness"
+                                                    Value="3" />
+                                            <Setter Property="Background"
+                                                    Value="LightCoral" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <TextBlock Text="{Tr 'Triggers.Group2.StatusLabel'}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" />
+                        </Border>
+
+                        <TextBlock Text="{Tr 'Triggers.Group2.Note'}"
+                                   FontStyle="Italic"
+                                   Foreground="Gray"
+                                   Margin="0,10,0,0" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{Tr 'Triggers.Group3.Header'}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{Tr 'Triggers.Group3.Label'}" />
+
+                        <CheckBox x:Name="CheckBox1"
+                                  Content="{Tr 'Triggers.Group3.Condition1'}"
+                                  Margin="0,5,0,5" />
+                        <CheckBox x:Name="CheckBox2"
+                                  Content="{Tr 'Triggers.Group3.Condition2'}"
+                                  Margin="0,5,0,10" />
+
+                        <Button Content="{Tr 'Triggers.Group3.Button'}"
+                                Width="150"
+                                Height="35">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="IsEnabled"
+                                            Value="False" />
+                                    <Setter Property="Background"
+                                            Value="LightGray" />
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding IsChecked, ElementName=CheckBox1}"
+                                                           Value="True" />
+                                                <Condition Binding="{Binding IsChecked, ElementName=CheckBox2}"
+                                                           Value="True" />
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="IsEnabled"
+                                                    Value="True" />
+                                            <Setter Property="Background"
+                                                    Value="LightGreen" />
+                                            <Setter Property="FontWeight"
+                                                    Value="Bold" />
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                        <TextBlock Text="{Tr 'Triggers.Group3.Note'}"
+                                   FontStyle="Italic"
+                                   Foreground="Gray" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{Tr 'Triggers.Group4.Header'}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{Tr 'Triggers.Group4.Label'}" />
+
+                        <Button Content="{Tr 'Triggers.Group4.Button'}"
+                                Width="200"
+                                Height="40"
+                                Background="LightBlue"
+                                Margin="0,10,0,10">
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                                                                To="Green"
+                                                                Duration="0:0:0.5" />
+
+                                                <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                                                                To="LightBlue"
+                                                                Duration="0:0:0.5"
+                                                                BeginTime="0:0:0.5" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+
+                        <TextBlock Text="{Tr 'Triggers.Group4.Note'}"
+                                   FontStyle="Italic"
+                                   Foreground="Gray" />
+                    </StackPanel>
+                </GroupBox>
+
+                <Border BorderBrush="#e3f1fc"
+                        BorderThickness="2"
+                        CornerRadius="5"
+                        Padding="10"
+                        Background="AliceBlue">
+                    <StackPanel>
+                        <TextBlock Text="{Tr 'Triggers.Comparison.Title'}"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,5" />
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="{Tr 'Triggers.Comparison.PropertyTrigger.Title'}"
+                                           FontWeight="Bold" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.PropertyTrigger.Item1'}" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.PropertyTrigger.Item2'}" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.PropertyTrigger.Item3'}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{Tr 'Triggers.Comparison.DataTrigger.Title'}"
+                                           FontWeight="Bold" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.DataTrigger.Item1'}" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.DataTrigger.Item2'}" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.DataTrigger.Item3'}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="{Tr 'Triggers.Comparison.MultiDataTrigger.Title'}"
+                                           FontWeight="Bold" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.MultiDataTrigger.Item1'}" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.MultiDataTrigger.Item2'}" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.MultiDataTrigger.Item3'}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="3">
+                                <TextBlock Text="{Tr 'Triggers.Comparison.EventTrigger.Title'}"
+                                           FontWeight="Bold" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.EventTrigger.Item1'}" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.EventTrigger.Item2'}" />
+                                <TextBlock Text="{Tr 'Triggers.Comparison.EventTrigger.Item3'}" />
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
