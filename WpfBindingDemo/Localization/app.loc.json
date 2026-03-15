@@ -1,0 +1,542 @@
+{
+    "LanguageName": {
+        "ru": "Русский",
+        "en": "English"
+    },
+    "App.Title": {
+        "ru": "Демонстрация привязок WPF",
+        "en": "WPF Binding Demo"
+    },
+    "Main.LanguageLabel": {
+        "ru": "Язык:",
+        "en": "Language:"
+    },
+    "Tabs.OneTime": {
+        "ru": "Однократная привязка",
+        "en": "OneTime binding"
+    },
+    "Tabs.TwoWay": {
+        "ru": "Двусторонняя привязка",
+        "en": "TwoWay binding"
+    },
+    "Tabs.OneWay": {
+        "ru": "Однонаправленная привязка",
+        "en": "OneWay binding"
+    },
+    "Tabs.Default": {
+        "ru": "Привязка по умолчанию",
+        "en": "Default binding"
+    },
+    "Tabs.Triggers": {
+        "ru": "Триггеры",
+        "en": "Triggers"
+    },
+    "Common.Yes": {
+        "ru": "Да",
+        "en": "Yes"
+    },
+    "Common.No": {
+        "ru": "Нет",
+        "en": "No"
+    },
+    "OneTime.Title": {
+        "ru": "Однократная привязка",
+        "en": "OneTime binding"
+    },
+    "OneTime.Description": {
+        "ru": "Привязка OneTime устанавливается только один раз при инициализации и не обновляется при изменении источника.",
+        "en": "OneTime binding is set only once during initialization and does not update when the source changes."
+    },
+    "OneTime.Group1.Header": {
+        "ru": "1. Прямая привязка к элементу",
+        "en": "1. Direct binding to an element"
+    },
+    "OneTime.Group1.SourceLabel": {
+        "ru": "Исходное значение:",
+        "en": "Source value:"
+    },
+    "OneTime.Group1.SourceInitial": {
+        "ru": "Начальное значение",
+        "en": "Initial value"
+    },
+    "OneTime.Group1.OneTimeToTextBox": {
+        "ru": "OneTime привязка к TextBox выше:",
+        "en": "OneTime binding to the TextBox above:"
+    },
+    "OneTime.Group1.Note": {
+        "ru": "Попробуйте изменить текст в TextBox выше - этот TextBlock не обновится",
+        "en": "Try changing the text in the TextBox above - this TextBlock will not update"
+    },
+    "OneTime.Group2.Header": {
+        "ru": "2. Привязка через ViewModel",
+        "en": "2. Binding via ViewModel"
+    },
+    "OneTime.Group2.ValueFromVm": {
+        "ru": "Значение из ViewModel:",
+        "en": "Value from ViewModel:"
+    },
+    "OneTime.Group2.OneTimeSameProperty": {
+        "ru": "OneTime привязка к тому же свойству:",
+        "en": "OneTime binding to the same property:"
+    },
+    "OneTime.Group2.UpdateButton": {
+        "ru": "Обновить свойство вручную",
+        "en": "Update property manually"
+    },
+    "OneTime.Group2.Note": {
+        "ru": "OneTime привязка НЕ обновится даже при изменении свойства в ViewModel",
+        "en": "OneTime binding will NOT update even if the property changes in the ViewModel"
+    },
+    "OneTime.InitialValue": {
+        "ru": "Начальное значение из ViewModel",
+        "en": "Initial value from ViewModel"
+    },
+    "OneTime.NewValueFormat": {
+        "ru": "Новое значение: {0}",
+        "en": "New value: {0}"
+    },
+    "TwoWay.Title": {
+        "ru": "Двусторонняя привязка",
+        "en": "TwoWay binding"
+    },
+    "TwoWay.Description": {
+        "ru": "Двусторонняя привязка обновляет и источник, и цель при изменении в любой стороне.",
+        "en": "TwoWay binding updates both source and target when either changes."
+    },
+    "TwoWay.Group1.Header": {
+        "ru": "1. Прямая TwoWay привязка между элементами",
+        "en": "1. Direct TwoWay binding between elements"
+    },
+    "TwoWay.Group1.Label": {
+        "ru": "Slider и TextBox связаны TwoWay привязкой:",
+        "en": "Slider and TextBox are bound TwoWay:"
+    },
+    "TwoWay.Group1.Note": {
+        "ru": "Перемещение слайдера обновляет TextBox и наоборот",
+        "en": "Moving the slider updates the TextBox and vice versa"
+    },
+    "TwoWay.Group2.Header": {
+        "ru": "2. TwoWay привязка через ViewModel",
+        "en": "2. TwoWay binding via ViewModel"
+    },
+    "TwoWay.Group2.Label": {
+        "ru": "Все элементы связаны с одним свойством ViewModel:",
+        "en": "All elements are bound to a single ViewModel property:"
+    },
+    "TwoWay.Group2.UserNameLabel": {
+        "ru": "Имя пользователя:",
+        "en": "User name:"
+    },
+    "TwoWay.Group2.AgeLabel": {
+        "ru": "Возраст:",
+        "en": "Age:"
+    },
+    "TwoWay.Group2.ActiveLabel": {
+        "ru": "Активен:",
+        "en": "Active:"
+    },
+    "TwoWay.Group2.ActiveCheckbox": {
+        "ru": "Пользователь активен",
+        "en": "User is active"
+    },
+    "TwoWay.AgeFormat": {
+        "ru": "Возраст: {0} лет",
+        "en": "Age: {0} years"
+    },
+    "TwoWay.ActiveStatusFormat": {
+        "ru": "Статус активности: {0}",
+        "en": "Active status: {0}"
+    },
+    "TwoWay.Group3.Header": {
+        "ru": "3. Различия UpdateSourceTrigger",
+        "en": "3. UpdateSourceTrigger differences"
+    },
+    "TwoWay.Group3.PropertyChangedLabel": {
+        "ru": "PropertyChanged (обновление при каждом изменении):",
+        "en": "PropertyChanged (updates on every change):"
+    },
+    "TwoWay.Group3.LostFocusLabel": {
+        "ru": "LostFocus (обновление при потере фокуса):",
+        "en": "LostFocus (updates when focus is lost):"
+    },
+    "TwoWay.Group3.ExplicitLabel": {
+        "ru": "Explicit (обновление только при вызове UpdateSource):",
+        "en": "Explicit (updates only when UpdateSource is called):"
+    },
+    "TwoWay.Group3.UpdateSourceButton": {
+        "ru": "Обновить источник",
+        "en": "Update source"
+    },
+    "TwoWay.CurrentValuesTitle": {
+        "ru": "Текущие значения в ViewModel:",
+        "en": "Current values in ViewModel:"
+    },
+    "TwoWay.CurrentValuesFormat": {
+        "ru": "Имя: {0}, Возраст: {1}, Активен: {2}",
+        "en": "Name: {0}, Age: {1}, Active: {2}"
+    },
+    "TwoWay.DefaultUserName": {
+        "ru": "Иван Иванов",
+        "en": "John Doe"
+    },
+    "OneWay.Title": {
+        "ru": "Однонаправленная привязка",
+        "en": "OneWay binding"
+    },
+    "OneWay.Description": {
+        "ru": "Однонаправленная привязка обновляет цель при изменении источника, но изменения в цели НЕ влияют на источник.",
+        "en": "OneWay binding updates the target when the source changes, but changes in the target do NOT affect the source."
+    },
+    "OneWay.Group1.Header": {
+        "ru": "1. Прямая OneWay привязка между элементами",
+        "en": "1. Direct OneWay binding between elements"
+    },
+    "OneWay.Group1.Label": {
+        "ru": "Slider > ProgressBar (OneWay):",
+        "en": "Slider > ProgressBar (OneWay):"
+    },
+    "OneWay.Group1.ValueLabel": {
+        "ru": "Значение:",
+        "en": "Value:"
+    },
+    "OneWay.Group1.Note": {
+        "ru": "Изменение слайдера обновляет ProgressBar и TextBlock, но не наоборот",
+        "en": "Changing the slider updates the ProgressBar and TextBlock, but not the other way around"
+    },
+    "OneWay.Group2.Header": {
+        "ru": "2. OneWay привязка через ViewModel",
+        "en": "2. OneWay binding via ViewModel"
+    },
+    "OneWay.Group2.SourceLabel": {
+        "ru": "Источник данных (можно редактировать):",
+        "en": "Data source (can be edited):"
+    },
+    "OneWay.Group2.OneWayLabel": {
+        "ru": "OneWay привязки к одному свойству:",
+        "en": "OneWay bindings to a single property:"
+    },
+    "OneWay.Group2.ValueFormat": {
+        "ru": "Значение: {0}",
+        "en": "Value: {0}"
+    },
+    "OneWay.Group2.LengthLabel": {
+        "ru": "Длина:",
+        "en": "Length:"
+    },
+    "OneWay.Group2.LengthSuffix": {
+        "ru": "символов",
+        "en": "chars"
+    },
+    "OneWay.Group2.Note": {
+        "ru": "Все элементы обновляются при изменении TextBox, но не могут изменить его",
+        "en": "All elements update when the TextBox changes, but cannot change it"
+    },
+    "OneWay.Group3.Header": {
+        "ru": "3. OneWay против режима по умолчанию",
+        "en": "3. OneWay vs Default binding mode"
+    },
+    "OneWay.Group3.Label": {
+        "ru": "Для TextBlock режим OneWay используется по умолчанию:",
+        "en": "For TextBlock, Mode=OneWay is the default:"
+    },
+    "OneWay.Group3.SourceInitial": {
+        "ru": "Пример текста",
+        "en": "Sample text"
+    },
+    "OneWay.Group3.ExplicitOneWayLabel": {
+        "ru": "Явный OneWay:",
+        "en": "Explicit OneWay:"
+    },
+    "OneWay.Group3.DefaultModeLabel": {
+        "ru": "Режим по умолчанию:",
+        "en": "Default mode:"
+    },
+    "OneWay.Group3.Note": {
+        "ru": "Оба работают одинаково, так как OneWay - режим по умолчанию для TextBlock",
+        "en": "Both work the same because OneWay is the default for TextBlock"
+    },
+    "OneWay.Group4.Header": {
+        "ru": "4. OneWay к вычисляемому свойству",
+        "en": "4. OneWay to a computed property"
+    },
+    "OneWay.Group4.Label": {
+        "ru": "Два числа (TwoWay привязка):",
+        "en": "Two numbers (TwoWay binding):"
+    },
+    "OneWay.Group4.NumberALabel": {
+        "ru": "Число A:",
+        "en": "Number A:"
+    },
+    "OneWay.Group4.NumberBLabel": {
+        "ru": "Число B:",
+        "en": "Number B:"
+    },
+    "OneWay.Group4.ComputedLabel": {
+        "ru": "Вычисляемые значения (OneWay, только для чтения):",
+        "en": "Computed properties (OneWay, read-only):"
+    },
+    "OneWay.Group4.SumLabel": {
+        "ru": "Сумма:",
+        "en": "Sum:"
+    },
+    "OneWay.Group4.DifferenceLabel": {
+        "ru": "Разность:",
+        "en": "Difference:"
+    },
+    "OneWay.Group4.ProductLabel": {
+        "ru": "Произведение:",
+        "en": "Product:"
+    },
+    "OneWay.SourceDefault": {
+        "ru": "Исходное значение",
+        "en": "Source value"
+    },
+    "Default.Title": {
+        "ru": "Привязка по умолчанию",
+        "en": "Default binding"
+    },
+    "Default.Description": {
+        "ru": "Каждый элемент WPF имеет режим привязки по умолчанию. Если Mode не указан, используется этот режим.",
+        "en": "Each WPF element has a default binding mode. If Mode is not specified, that mode is used."
+    },
+    "Default.Group1.Header": {
+        "ru": "Демонстрация: одно свойство, разные элементы",
+        "en": "Demo: one property, different elements"
+    },
+    "Default.Group1.SourceLabel": {
+        "ru": "Исходное значение (можно редактировать):",
+        "en": "Source value (can be edited):"
+    },
+    "Default.Group1.OneWayTitle": {
+        "ru": "Элементы OneWay (по умолчанию):",
+        "en": "OneWay elements (default):"
+    },
+    "Default.Group1.TextBlockLabel": {
+        "ru": "TextBlock (только чтение):",
+        "en": "TextBlock (read-only):"
+    },
+    "Default.Group1.ProgressBarLabel": {
+        "ru": "ProgressBar:",
+        "en": "ProgressBar:"
+    },
+    "Default.Group1.ValueFormat": {
+        "ru": "Значение: {0}",
+        "en": "Value: {0}"
+    },
+    "Default.Group1.TwoWayTitle": {
+        "ru": "Элементы TwoWay (по умолчанию):",
+        "en": "TwoWay elements (default):"
+    },
+    "Default.Group1.TextBoxLabel": {
+        "ru": "TextBox (редактируемый):",
+        "en": "TextBox (editable):"
+    },
+    "Default.Group1.SliderLabel": {
+        "ru": "Slider:",
+        "en": "Slider:"
+    },
+    "Default.Group1.CheckBoxLabel": {
+        "ru": "CheckBox:",
+        "en": "CheckBox:"
+    },
+    "Default.Group1.CheckBoxContent": {
+        "ru": "Состояние",
+        "en": "State"
+    },
+    "Default.Group1.Note": {
+        "ru": "Попробуйте изменить значение в верхнем TextBox и посмотрите, как ведут себя разные элементы",
+        "en": "Try changing the value in the top TextBox and see how different elements behave"
+    },
+    "Default.Group2.Header": {
+        "ru": "Сравнение: режим по умолчанию vs явный Mode",
+        "en": "Comparison: Default mode vs explicit Mode"
+    },
+    "Default.Group2.Label": {
+        "ru": "Два одинаковых TextBox с разными привязками:",
+        "en": "Two identical TextBoxes with different bindings:"
+    },
+    "Default.Group2.NoModeTitle": {
+        "ru": "TextBox без указания Mode:",
+        "en": "TextBox without specifying Mode:"
+    },
+    "Default.Group2.NoModeNote": {
+        "ru": "Использует TwoWay (по умолчанию для TextBox)",
+        "en": "Uses TwoWay (default for TextBox)"
+    },
+    "Default.Group2.OneWayTitle": {
+        "ru": "TextBox с Mode=OneWay:",
+        "en": "TextBox with Mode=OneWay:"
+    },
+    "Default.Group2.OneWayNote": {
+        "ru": "Явно указан OneWay, игнорируя умолчание",
+        "en": "OneWay is explicit, ignoring the default"
+    },
+    "Default.Group2.ValueLabel": {
+        "ru": "Значение:",
+        "en": "Value:"
+    },
+    "Default.Group2.Note": {
+        "ru": "Попробуйте изменить текст в каждом TextBox. Первый обновляет значение, второй - нет.",
+        "en": "Try changing the text in each TextBox. The first updates the value, the second does not."
+    },
+    "Default.DemoValue": {
+        "ru": "Измените это значение",
+        "en": "Change this value"
+    },
+    "Default.TestProperty": {
+        "ru": "Тестовый текст",
+        "en": "Test text"
+    },
+    "Triggers.Title": {
+        "ru": "Триггеры",
+        "en": "Triggers"
+    },
+    "Triggers.Description": {
+        "ru": "Триггеры позволяют автоматически изменять свойства элементов при определенных условиях.",
+        "en": "Triggers automatically change element properties under certain conditions."
+    },
+    "Triggers.Group1.Header": {
+        "ru": "1. Property Trigger (срабатывает при изменении свойства)",
+        "en": "1. Property Trigger (fires when a property changes)"
+    },
+    "Triggers.Group1.Label": {
+        "ru": "Кнопка меняет цвет при наведении мыши (IsMouseOver) и при нажатии (IsPressed):",
+        "en": "The button changes color on mouse over (IsMouseOver) and when pressed (IsPressed):"
+    },
+    "Triggers.Group1.Button": {
+        "ru": "Наведи на меня",
+        "en": "Hover over me"
+    },
+    "Triggers.Group1.Note": {
+        "ru": "Срабатывает при изменении свойств элемента (IsMouseOver, IsPressed)",
+        "en": "Fires when element properties change (IsMouseOver, IsPressed)"
+    },
+    "Triggers.Group2.Header": {
+        "ru": "2. Data Trigger (срабатывает при изменении данных)",
+        "en": "2. Data Trigger (fires when data changes)"
+    },
+    "Triggers.Group2.Label": {
+        "ru": "Цвет рамки зависит от значения в TextBox:",
+        "en": "The border color depends on the value in the TextBox:"
+    },
+    "Triggers.Group2.TextBoxInitial": {
+        "ru": "Введите 'active' или 'error'",
+        "en": "Enter 'active' or 'error'"
+    },
+    "Triggers.Group2.StatusLabel": {
+        "ru": "Проверка состояния",
+        "en": "Status check"
+    },
+    "Triggers.Group2.Note": {
+        "ru": "Срабатывает при изменении данных, а не свойств элемента",
+        "en": "Fires when data changes, not element properties"
+    },
+    "Triggers.Group3.Header": {
+        "ru": "3. MultiData Trigger (несколько условий)",
+        "en": "3. MultiData Trigger (multiple conditions)"
+    },
+    "Triggers.Group3.Label": {
+        "ru": "Кнопка становится доступной только когда оба CheckBox отмечены:",
+        "en": "The button is enabled only when both CheckBoxes are checked:"
+    },
+    "Triggers.Group3.Condition1": {
+        "ru": "Необходимое условие 1",
+        "en": "Required condition 1"
+    },
+    "Triggers.Group3.Condition2": {
+        "ru": "Необходимое условие 2",
+        "en": "Required condition 2"
+    },
+    "Triggers.Group3.Button": {
+        "ru": "Продолжить",
+        "en": "Continue"
+    },
+    "Triggers.Group3.Note": {
+        "ru": "Срабатывает только при выполнении всех условий",
+        "en": "Fires only when ALL conditions are met"
+    },
+    "Triggers.Group4.Header": {
+        "ru": "4. Event Trigger (срабатывает при событии)",
+        "en": "4. Event Trigger (fires on an event)"
+    },
+    "Triggers.Group4.Label": {
+        "ru": "Анимация при нажатии на кнопку:",
+        "en": "Animation when the button is clicked:"
+    },
+    "Triggers.Group4.Button": {
+        "ru": "Нажми для анимации",
+        "en": "Click for animation"
+    },
+    "Triggers.Group4.Note": {
+        "ru": "Срабатывает при событии (Click, MouseEnter и т.д.), обычно для анимаций",
+        "en": "Fires on an event (Click, MouseEnter, etc.), usually for animations"
+    },
+    "Triggers.Comparison.Title": {
+        "ru": "Сравнение триггеров:",
+        "en": "Trigger comparison:"
+    },
+    "Triggers.Comparison.PropertyTrigger.Title": {
+        "ru": "PropertyTrigger",
+        "en": "PropertyTrigger"
+    },
+    "Triggers.Comparison.PropertyTrigger.Item1": {
+        "ru": "• Срабатывает: изменение свойства",
+        "en": "• Fires on: property change"
+    },
+    "Triggers.Comparison.PropertyTrigger.Item2": {
+        "ru": "• Пример: IsMouseOver",
+        "en": "• Example: IsMouseOver"
+    },
+    "Triggers.Comparison.PropertyTrigger.Item3": {
+        "ru": "• Прост в использовании",
+        "en": "• Easy to use"
+    },
+    "Triggers.Comparison.DataTrigger.Title": {
+        "ru": "DataTrigger",
+        "en": "DataTrigger"
+    },
+    "Triggers.Comparison.DataTrigger.Item1": {
+        "ru": "• Срабатывает: изменение данных",
+        "en": "• Fires on: data change"
+    },
+    "Triggers.Comparison.DataTrigger.Item2": {
+        "ru": "• Пример: значение TextBox",
+        "en": "• Example: TextBox value"
+    },
+    "Triggers.Comparison.DataTrigger.Item3": {
+        "ru": "• Гибкий, управляется данными",
+        "en": "• Flexible, data-driven"
+    },
+    "Triggers.Comparison.MultiDataTrigger.Title": {
+        "ru": "MultiDataTrigger",
+        "en": "MultiDataTrigger"
+    },
+    "Triggers.Comparison.MultiDataTrigger.Item1": {
+        "ru": "• Срабатывает: несколько условий",
+        "en": "• Fires on: multiple conditions"
+    },
+    "Triggers.Comparison.MultiDataTrigger.Item2": {
+        "ru": "• Пример: все CheckBox=true",
+        "en": "• Example: all CheckBoxes=true"
+    },
+    "Triggers.Comparison.MultiDataTrigger.Item3": {
+        "ru": "• Сложные условия",
+        "en": "• Complex conditions"
+    },
+    "Triggers.Comparison.EventTrigger.Title": {
+        "ru": "EventTrigger",
+        "en": "EventTrigger"
+    },
+    "Triggers.Comparison.EventTrigger.Item1": {
+        "ru": "• Срабатывает: событие",
+        "en": "• Fires on: event"
+    },
+    "Triggers.Comparison.EventTrigger.Item2": {
+        "ru": "• Пример: Click",
+        "en": "• Example: Click"
+    },
+    "Triggers.Comparison.EventTrigger.Item3": {
+        "ru": "• Для анимаций",
+        "en": "• For animations"
+    }
+}

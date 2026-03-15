@@ -1,20 +1,24 @@
-п»їusing System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CodingSeb.Localization;
 
 namespace WpfBindingDemo.ViewModels
 {
     /// <summary>
-    /// РџСЂРёРІСЏР·РєР° РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ
+    /// Привязка по-умолчанию
     /// </summary>
     public class DefaultBindingViewModel : ViewModelBase
     {
-        private string _demoValue = "РР·РјРµРЅРё СЌС‚Рѕ Р·РЅР°С‡РµРЅРёРµ";
-        private string _testProperty = "РўРµСЃС‚РѕРІС‹Р№ С‚РµРєСЃС‚";
+        private string _demoValue;
+        private string _testProperty;
+        private string _defaultDemoValue;
+        private string _defaultTestProperty;
         private double _numericValue = 50;
         private bool _isChecked = true;
+
+        public DefaultBindingViewModel()
+        {
+            UpdateLocalizedDefaults(force: true);
+            Loc.Instance.CurrentLanguageChanged += (_, __) => UpdateLocalizedDefaults(force: false);
+        }
 
         public string DemoValue
         {
@@ -38,6 +42,27 @@ namespace WpfBindingDemo.ViewModels
         {
             get => _isChecked;
             set => SetField(ref _isChecked, value);
+        }
+
+        private void UpdateLocalizedDefaults(bool force)
+        {
+            var newDemo = Loc.Tr("Default.DemoValue", "Измени это значение");
+            var newTest = Loc.Tr("Default.TestProperty", "Тестовый текст");
+
+            if (force || _demoValue == _defaultDemoValue)
+            {
+                _demoValue = newDemo;
+                OnPropertyChanged(nameof(DemoValue));
+            }
+
+            if (force || _testProperty == _defaultTestProperty)
+            {
+                _testProperty = newTest;
+                OnPropertyChanged(nameof(TestProperty));
+            }
+
+            _defaultDemoValue = newDemo;
+            _defaultTestProperty = newTest;
         }
     }
 }

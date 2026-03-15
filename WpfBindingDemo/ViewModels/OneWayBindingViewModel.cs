@@ -1,19 +1,22 @@
-п»їusing System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CodingSeb.Localization;
 
 namespace WpfBindingDemo.ViewModels
 {
     /// <summary>
-    /// РћРґРЅРѕСЃС‚РѕСЂРѕРЅРЅСЏСЏ РїСЂРёРІСЏР·РєР°
+    /// Односторонняя привязка
     /// </summary>
     public class OneWayBindingViewModel : ViewModelBase
     {
-        private string _sourceValue = "РСЃС…РѕРґРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ";
+        private string _sourceValue;
+        private string _defaultSourceValue;
         private double _numberA = 10;
         private double _numberB = 5;
+
+        public OneWayBindingViewModel()
+        {
+            UpdateLocalizedDefaults(force: true);
+            Loc.Instance.CurrentLanguageChanged += (_, __) => UpdateLocalizedDefaults(force: false);
+        }
 
         public string SourceValue
         {
@@ -49,9 +52,21 @@ namespace WpfBindingDemo.ViewModels
             }
         }
 
-        // Р’С‹С‡РёСЃР»СЏРµРјС‹Рµ СЃРІРѕР№СЃС‚РІР° (С‚РѕР»СЊРєРѕ get)
+        // Вычисляемые свойства (только get)
         public double Sum => NumberA + NumberB;
         public double Difference => NumberA - NumberB;
         public double Product => NumberA * NumberB;
+
+        private void UpdateLocalizedDefaults(bool force)
+        {
+            var newSource = Loc.Tr("OneWay.SourceDefault", "Исходное значение");
+            if (force || _sourceValue == _defaultSourceValue)
+            {
+                _sourceValue = newSource;
+                OnPropertyChanged(nameof(SourceValue));
+            }
+
+            _defaultSourceValue = newSource;
+        }
     }
 }

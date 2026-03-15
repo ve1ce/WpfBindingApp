@@ -1,35 +1,29 @@
-п»їusing System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CodingSeb.Localization;
 
 namespace WpfBindingDemo.ViewModels
 {
     /// <summary>
-    /// РљР»Р°СЃСЃ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РІРєР»Р°РґРѕРє
+    /// Класс для отображения вкладок
     /// </summary>
     public class TabViewModel : ViewModelBase
     {
-        private string _tabName;
+        private readonly string _tabTextId;
         private object _tabContent;
 
-        public string TabName // РќР°РёРјРµРЅРѕРІР°РЅРёРµ РІРєР»Р°РґРєРё
-        {
-            get => _tabName;
-            set => SetField(ref _tabName, value);
-        }
+        public string TabName => Loc.Tr(_tabTextId); // Наименование вкладки
 
-        public object TabContent // РЎРѕРґРµСЂР¶РёРјРѕРє РІРєР»Р°РґРєРё
+        public object TabContent // Содержимок вкладки
         {
             get => _tabContent;
             set => SetField(ref _tabContent, value);
         }
 
-        public TabViewModel(string name, object content) // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РІРєР»Р°РґРєРё
+        public TabViewModel(string textId, object content) // Конструктор вкладки
         {
-            TabName = name;
+            _tabTextId = textId;
             TabContent = content;
+
+            Loc.Instance.CurrentLanguageChanged += (_, __) => OnPropertyChanged(nameof(TabName));
         }
     }
 }

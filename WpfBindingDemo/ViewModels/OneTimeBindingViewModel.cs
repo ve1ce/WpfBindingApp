@@ -1,20 +1,17 @@
-п»їusing System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System;
 using System.Windows.Input;
+using CodingSeb.Localization;
 
 namespace WpfBindingDemo.ViewModels
 {
     /// <summary>
-    /// РћРґРЅРѕСЂР°Р·РѕРІР°СЏ РїСЂРёРІСЏР·РєР°
+    /// Одноразовая привязка
     /// </summary>
     public class OneTimeBindingViewModel : ViewModelBase
     {
-        private string _oneTimeValue = "РќР°С‡Р°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РёР· ViewModel";
-        private Random _random = new Random();
+        private string _oneTimeValue;
+        private string _defaultOneTimeValue;
+        private readonly Random _random = new Random();
 
         public string OneTimeValue
         {
@@ -26,12 +23,27 @@ namespace WpfBindingDemo.ViewModels
 
         public OneTimeBindingViewModel()
         {
+            UpdateLocalizedDefaults(force: true);
             UpdateOneTimeValueCommand = new RelayCommand(UpdateOneTimeValue);
+            Loc.Instance.CurrentLanguageChanged += (_, __) => UpdateLocalizedDefaults(force: false);
         }
 
         private void UpdateOneTimeValue()
         {
-            OneTimeValue = $"РќРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ: {_random.Next(1000)}";
+            var format = Loc.Tr("OneTime.NewValueFormat", "Новое значение: {0}");
+            OneTimeValue = string.Format(format, _random.Next(1000));
+        }
+
+        private void UpdateLocalizedDefaults(bool force)
+        {
+            var newDefault = Loc.Tr("OneTime.InitialValue", "Начальное значение из ViewModel");
+            if (force || _oneTimeValue == _defaultOneTimeValue)
+            {
+                _oneTimeValue = newDefault;
+                OnPropertyChanged(nameof(OneTimeValue));
+            }
+
+            _defaultOneTimeValue = newDefault;
         }
     }
 }

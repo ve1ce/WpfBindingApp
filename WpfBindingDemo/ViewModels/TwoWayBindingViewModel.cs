@@ -1,20 +1,26 @@
-п»їusing System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System;
+using CodingSeb.Localization;
 
 namespace WpfBindingDemo.ViewModels
 {
     /// <summary>
-    /// Р”РІСѓСЃС‚РѕСЂРѕРЅРЅСЏСЏ РїСЂРёРІСЏР·РєР°
+    /// Двусторонняя привязка
     /// </summary>
     public class TwoWayBindingViewModel : ViewModelBase
     {
-        private string _userName = "РРІР°РЅ РРІР°РЅРѕРІ";
+        private string _userName;
+        private string _defaultUserName;
         private int _age = 25;
         private bool _isActive = true;
+
+        public TwoWayBindingViewModel()
+        {
+            UpdateLocalizedDefaults(force: true);
+            Loc.Instance.CurrentLanguageChanged += (_, __) =>
+            {
+                UpdateLocalizedDefaults(force: false);
+                OnPropertyChanged(nameof(CurrentValues));
+            };
+        }
 
         public string UserName
         {
@@ -52,7 +58,29 @@ namespace WpfBindingDemo.ViewModels
             }
         }
 
-        public string CurrentValues =>
-            $"РРјСЏ: {UserName}, Р’РѕР·СЂР°СЃС‚: {Age}, РђРєС‚РёРІРµРЅ: {(IsActive ? "Р”Р°" : "РќРµС‚")}";
+        public string CurrentValues
+        {
+            get
+            {
+                var activeText = IsActive
+                    ? Loc.Tr("Common.Yes", "Да")
+                    : Loc.Tr("Common.No", "Нет");
+                var format = Loc.Tr("TwoWay.CurrentValuesFormat", "Имя: {0}, Возраст: {1}, Активен: {2}");
+                return string.Format(format, UserName, Age, activeText);
+            }
+        }
+
+        private void UpdateLocalizedDefaults(bool force)
+        {
+            var newUserName = Loc.Tr("TwoWay.DefaultUserName", "Иван Иванов");
+            if (force || _userName == _defaultUserName)
+            {
+                _userName = newUserName;
+                OnPropertyChanged(nameof(UserName));
+                OnPropertyChanged(nameof(CurrentValues));
+            }
+
+            _defaultUserName = newUserName;
+        }
     }
 }
