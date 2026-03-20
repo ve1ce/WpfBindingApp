@@ -1,13 +1,13 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!-- Common -->
+    <!-- Общие -->
     <sys:String x:Key="App_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">WPF Binding Sample</sys:String>
     <sys:String x:Key="Language_Label" xmlns:sys="clr-namespace:System;assembly=mscorlib">Language:</sys:String>
     <sys:String x:Key="Language_Russian" xmlns:sys="clr-namespace:System;assembly=mscorlib">Russian</sys:String>
     <sys:String x:Key="Language_English" xmlns:sys="clr-namespace:System;assembly=mscorlib">English</sys:String>
 
-    <!-- Tab titles -->
+    <!-- Названия вкладок -->
     <sys:String x:Key="Tab_OneTime" xmlns:sys="clr-namespace:System;assembly=mscorlib">One-time binding</sys:String>
     <sys:String x:Key="Tab_TwoWay" xmlns:sys="clr-namespace:System;assembly=mscorlib">Two-way binding</sys:String>
     <sys:String x:Key="Tab_OneWay" xmlns:sys="clr-namespace:System;assembly=mscorlib">One-way binding</sys:String>
@@ -45,7 +45,7 @@
     <sys:String x:Key="Triggers_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Triggers</sys:String>
     <sys:String x:Key="Triggers_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Triggers allow you to automatically change control properties when some conditions are met.</sys:String>
 
-    <!-- DefaultBindingView - comparison block -->
+    <!-- DefaultBindingView - блок сравнения -->
     <sys:String x:Key="DefaultBinding_Group2_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">Comparison: Default Mode vs Explicit Mode</sys:String>
     <sys:String x:Key="DefaultBinding_Group2_Intro" xmlns:sys="clr-namespace:System;assembly=mscorlib">Two identical TextBoxes with different bindings:</sys:String>
     <sys:String x:Key="DefaultBinding_Group2_LeftTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">TextBox without Mode specified:</sys:String>
@@ -55,7 +55,7 @@
     <sys:String x:Key="DefaultBinding_Group2_ValueTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Value:</sys:String>
     <sys:String x:Key="DefaultBinding_Group2_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Try changing text in both TextBoxes. The first will update the value, the second will not.</sys:String>
 
-    <!-- OneTimeBindingView - groups -->
+    <!-- OneTimeBindingView - группы -->
     <sys:String x:Key="OneTime_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Direct binding to a control</sys:String>
     <sys:String x:Key="OneTime_Group1_SourceLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Source value:</sys:String>
     <sys:String x:Key="OneTime_Group1_InitialValue" xmlns:sys="clr-namespace:System;assembly=mscorlib">Initial value</sys:String>
@@ -67,7 +67,7 @@
     <sys:String x:Key="OneTime_Group2_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Update property manually</sys:String>
     <sys:String x:Key="OneTime_Group2_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">OneTime binding will NOT update even when the property in the ViewModel changes</sys:String>
 
-    <!-- TwoWayBindingView - groups -->
+    <!-- TwoWayBindingView - группы -->
     <sys:String x:Key="TwoWay_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Direct TwoWay binding between controls</sys:String>
     <sys:String x:Key="TwoWay_Group1_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Slider and TextBox are linked by TwoWay binding:</sys:String>
     <sys:String x:Key="TwoWay_Group1_Footer" xmlns:sys="clr-namespace:System;assembly=mscorlib">Changing the slider updates the TextBox and vice versa</sys:String>
@@ -87,7 +87,7 @@
     <sys:String x:Key="TwoWay_Group3_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Update source</sys:String>
     <sys:String x:Key="TwoWay_CurrentValuesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Current values in ViewModel:</sys:String>
 
-    <!-- OneWayBindingView - groups -->
+    <!-- OneWayBindingView - группы -->
     <sys:String x:Key="OneWay_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Direct OneWay binding between controls</sys:String>
     <sys:String x:Key="OneWay_Group1_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Slider → ProgressBar (OneWay):</sys:String>
     <sys:String x:Key="OneWay_Group1_ValueTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Value:</sys:String>
@@ -114,7 +114,7 @@
     <sys:String x:Key="OneWay_Group4_Difference" xmlns:sys="clr-namespace:System;assembly=mscorlib">Difference:</sys:String>
     <sys:String x:Key="OneWay_Group4_Product" xmlns:sys="clr-namespace:System;assembly=mscorlib">Product:</sys:String>
 
-    <!-- TriggersView - groups -->
+    <!-- TriggersView - группы -->
     <sys:String x:Key="Triggers_Group1_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. Property Trigger (fires on property change)</sys:String>
     <sys:String x:Key="Triggers_Group1_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">The button changes color when the mouse is over it (IsMouseOver) and when it is pressed (IsPressed):</sys:String>
     <sys:String x:Key="Triggers_Group1_Button" xmlns:sys="clr-namespace:System;assembly=mscorlib">Hover over me</sys:String>
