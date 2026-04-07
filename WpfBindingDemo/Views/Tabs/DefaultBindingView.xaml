@@ -1,0 +1,148 @@
+<UserControl x:Class="WpfBindingDemo.Views.Tabs.DefaultBindingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfBindingDemo.Views.Tabs"
+             mc:Ignorable="d"
+             d:DesignHeight="400"
+             d:DesignWidth="600"
+             Background="White">
+
+    <Grid Margin="10">
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="{DynamicResource DefaultBinding_Title}"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10" />
+
+                <TextBlock Text="{DynamicResource DefaultBinding_Description}"
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,20" />
+
+                <GroupBox Header="{DynamicResource DefaultBinding_Group1_Header}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{DynamicResource DefaultBinding_SourceValue_Label}" />
+                        <TextBox Text="{Binding DemoValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 FontWeight="Bold"
+                                 Margin="0,5,0,10" />
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0"
+                                        Margin="0,0,10,0">
+                                <TextBlock Text="{DynamicResource DefaultBinding_OneWayElements_Title}"
+                                           FontWeight="Bold" />
+
+                                <TextBlock Text="{DynamicResource DefaultBinding_TextBlock_Label}"
+                                           Margin="0,10,0,2" />
+                                <Border Background="LightYellow"
+                                        Padding="5">
+                                    <TextBlock Text="{Binding DemoValue}" />
+                                </Border>
+
+                                <TextBlock Text="{DynamicResource DefaultBinding_ProgressBar_Label}"
+                                           Margin="0,10,0,2" />
+                                <ProgressBar Value="{Binding NumericValue}"
+                                             Maximum="100"
+                                             Height="20" />
+                                <TextBlock Text="{Binding NumericValue, StringFormat='Значение: {0}'}"
+                                           HorizontalAlignment="Center"
+                                           FontSize="10" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1"
+                                        Margin="10,0,0,0">
+                                <TextBlock Text="{DynamicResource DefaultBinding_TwoWayElements_Title}"
+                                           FontWeight="Bold" />
+
+                                <TextBlock Text="{DynamicResource DefaultBinding_TextBox_Label}"
+                                           Margin="0,10,0,2" />
+                                <TextBox Text="{Binding DemoValue}"
+                                         Background="#b9a3f0" />
+
+                                <TextBlock Text="{DynamicResource DefaultBinding_Slider_Label}"
+                                           Margin="0,10,0,2" />
+                                <Slider Value="{Binding NumericValue}"
+                                        Minimum="0"
+                                        Maximum="100" />
+                                <TextBox Text="{Binding NumericValue, StringFormat=\{0:F1\}}"
+                                         HorizontalAlignment="Center"
+                                         Width="50" />
+
+                                <TextBlock Text="CheckBox:"
+                                           Margin="0,10,0,2" />
+                                <CheckBox Content="{DynamicResource DefaultBinding_CheckBox_Label}"
+                                          IsChecked="{Binding IsChecked}"
+                                          HorizontalAlignment="Left" />
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock Text="{DynamicResource DefaultBinding_Footer}"
+                                   FontStyle="Italic"
+                                   Foreground="Gray"
+                                   Margin="0,15,0,0" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{DynamicResource DefaultBinding_Group2_Header}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{DynamicResource DefaultBinding_Group2_Intro}" />
+
+                        <Grid Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0"
+                                        Margin="0,0,10,0">
+                                <TextBlock Text="{DynamicResource DefaultBinding_Group2_LeftTitle}"
+                                           FontWeight="Bold" />
+                                <TextBox Text="{Binding TestProperty}"
+                                         Background="LightYellow"
+                                         Height="60"
+                                         TextWrapping="Wrap"
+                                         Margin="0,5,0,5" />
+                                <TextBlock Text="{DynamicResource DefaultBinding_Group2_LeftDescription}"
+                                           FontSize="10" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1"
+                                        Margin="10,0,0,0">
+                                <TextBlock Text="{DynamicResource DefaultBinding_Group2_RightTitle}"
+                                           FontWeight="Bold" />
+                                <TextBox Text="{Binding TestProperty, Mode=OneWay}"
+                                         Background="#b9a3f0"
+                                         Height="60"
+                                         TextWrapping="Wrap"
+                                         Margin="0,5,0,5" />
+                                <TextBlock Text="{DynamicResource DefaultBinding_Group2_RightDescription}"
+                                           FontSize="10" />
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock Text="{DynamicResource DefaultBinding_Group2_ValueTitle}"
+                                   Margin="0,10,0,5" />
+                        <TextBlock Text="{Binding TestProperty}"
+                                   FontWeight="Bold"
+                                   Background="LightGray"
+                                   Padding="5" />
+
+                        <TextBlock Text="{DynamicResource DefaultBinding_Group2_Footer}"
+                                   FontStyle="Italic"
+                                   Foreground="Gray"
+                                   Margin="0,10,0,0" />
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

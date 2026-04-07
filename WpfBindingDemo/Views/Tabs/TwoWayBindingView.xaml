@@ -1,0 +1,139 @@
+<UserControl x:Class="WpfBindingDemo.Views.Tabs.TwoWayBindingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfBindingDemo.Views.Tabs"
+             mc:Ignorable="d"
+             d:DesignHeight="400"
+             d:DesignWidth="600"
+             Background="White">
+
+    <Grid Margin="10">
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="{DynamicResource TwoWay_Title}"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10" />
+
+                <TextBlock Text="{DynamicResource TwoWay_Description}"
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,20" />
+
+                <GroupBox Header="{DynamicResource TwoWay_Group1_Header}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{DynamicResource TwoWay_Group1_Description}" />
+                        <Slider x:Name="DirectSlider"
+                                Minimum="0"
+                                Maximum="100"
+                                Value="50"
+                                Margin="0,5,0,5" />
+
+                        <TextBox Text="{Binding Value, ElementName=DirectSlider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Margin="0,0,0,10" />
+
+                        <TextBlock Text="{DynamicResource TwoWay_Group1_Footer}"
+                                   FontStyle="Italic"
+                                   Foreground="Gray" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{DynamicResource TwoWay_Group2_Header}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{DynamicResource TwoWay_Group2_Intro}" />
+
+                        <TextBlock Text="{DynamicResource TwoWay_Group2_UserNameLabel}"
+                                   Margin="0,10,0,5" />
+
+                        <TextBox Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Margin="0,0,0,5" />
+
+                        <TextBlock Text="{Binding UserName}"
+                                   Background="LightYellow"
+                                   Padding="5"
+                                   Margin="0,0,0,10" />
+
+                        <TextBlock Text="{DynamicResource TwoWay_Group2_AgeLabel}"
+                                   Margin="0,10,0,5" />
+
+                        <Slider Value="{Binding Age, Mode=TwoWay}"
+                                Minimum="0"
+                                Maximum="100"
+                                Margin="0,0,0,5" />
+
+                        <TextBox Text="{Binding Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Margin="0,0,0,5" />
+
+                        <TextBlock Background="LightYellow"
+                                   Padding="5"
+                                   Margin="0,0,0,10">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0}{1}{2}">
+                                    <Binding Source="{StaticResource TwoWay_Group2_AgePrefix}" />
+                                    <Binding Path="Age" />
+                                    <Binding Source="{StaticResource TwoWay_Group2_AgeSuffix}" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+
+                        <TextBlock Text="{DynamicResource TwoWay_Group2_IsActiveLabel}"
+                                   Margin="0,10,0,5" />
+
+                        <CheckBox IsChecked="{Binding IsActive, Mode=TwoWay}"
+                                  Content="{DynamicResource TwoWay_Group2_IsActiveContent}"
+                                  Margin="0,0,0,5" />
+
+                        <TextBlock Background="LightYellow"
+                                   Padding="5">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0}{1}">
+                                    <Binding Source="{StaticResource TwoWay_Group2_StatusPrefix}" />
+                                    <Binding Path="IsActive" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{DynamicResource TwoWay_Group3_Header}"
+                          Margin="0,0,0,15">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{DynamicResource TwoWay_Group3_PropertyChanged}" />
+                        <TextBox Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Margin="0,5,0,10" />
+
+                        <TextBlock Text="{DynamicResource TwoWay_Group3_LostFocus}" />
+                        <TextBox Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                                 Margin="0,5,0,10" />
+
+                        <TextBlock Text="{DynamicResource TwoWay_Group3_Explicit}" />
+                        <TextBox x:Name="ExplicitTextBox"
+                                 Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                 Margin="0,5,0,5" />
+
+                        <Button Content="{DynamicResource TwoWay_Group3_Button}"
+                                Click="UpdateExplicitBinding_Click"
+                                Padding="5"
+                                Width="150" />
+                    </StackPanel>
+                </GroupBox>
+
+                <Border BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Padding="10"
+                        Background="LightYellow">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource TwoWay_CurrentValuesTitle}"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,5" />
+                        <TextBlock Text="{Binding CurrentValues}" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
